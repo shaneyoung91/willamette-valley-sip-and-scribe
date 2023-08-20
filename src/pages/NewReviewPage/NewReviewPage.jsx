@@ -2,7 +2,7 @@
 export default function NewReviewPage() {
     return (
         <div>
-            <h1>NewReviewPage</h1>
+            <h2>NewReviewPage</h2>
         </div>
     )
 }

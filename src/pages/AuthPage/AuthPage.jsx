@@ -1,8 +1,10 @@
+import { Button } from 'react-bootstrap';
 
 export default function AuthPage() {
     return (
         <div>
-            <h1>AuthPage</h1>
+            <h2>AuthPage</h2>
+            <Button>Test Test Test</Button>
         </div>
     )
 }
