@@ -1,7 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
-import * as userService from '../../pages/utilities/users-service';
-
+import * as usersService from '../../utilities/users-service';
 
 export default function SideBar({ isLoggedIn, user, setUser }) {
     const navigate = useNavigate();
@@ -18,7 +17,7 @@ export default function SideBar({ isLoggedIn, user, setUser }) {
     };
 
     const handleLogOut = () => {
-        userService.logOut();
+        usersService.logOut();
         setUser(null);
     }
     

@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { signUp } from '../../pages/utilities/users-service';
+import { signUp } from '../../utilities/users-service';
 import { useNavigate } from 'react-router-dom';
 
 export default function SignUpForm({ setIsLoggedIn, setUser }) {
