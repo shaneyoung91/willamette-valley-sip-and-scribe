@@ -16,6 +16,11 @@ const reviewSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
+    },
+    winery: {
+        type: Schema.Types.ObjectId,
+        ref: 'Winery',
+        required: true
     }
 }, {
     timestamps: true
