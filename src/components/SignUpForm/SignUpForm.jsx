@@ -76,6 +76,7 @@ export default function SignUpForm({ setIsLoggedIn, setUser }) {
                     &nbsp; &nbsp; &nbsp;
                     <Button type="submit" disabled={disable}>Sign Up</Button>
             </form>
+            &nbsp;
         </div>
     )
 }

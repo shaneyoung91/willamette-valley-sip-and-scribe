@@ -2,17 +2,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
 
-export default function SideBar({ isLoggedIn, user, setUser }) {
+export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
     const navigate = useNavigate();
 
     const handleClick = (evt) => {
         // If not logged in, redirect to AuthPage
         if (!isLoggedIn) {
             navigate('/auth');
-            evt.preventDefault()
+            evt.preventDefault();
         } else {
             navigate('/reviews/new');
-            evt.preventDefault()
+            evt.preventDefault();
         }
     };
 
@@ -26,24 +26,26 @@ export default function SideBar({ isLoggedIn, user, setUser }) {
             <Navbar expand="lg">
                 <Nav>
                     <Nav.Item>
-                        <Nav.Link href="/">About</Nav.Link>
+                        <Link to="/">About</Link>
                     </Nav.Item>
                     &nbsp;
                     <Nav.Item>
-                        <Nav.Link href="/wineries">Explore Wineries</Nav.Link>
+                        <Link to="/wineries">Explore Wineries</Link>
                     </Nav.Item>
                     &nbsp;
                     <Nav.Item>
-                        <Nav.Link href="/reviews/new" onClick={handleClick}>Reviews</Nav.Link>
+                        <Link to="/reviews/new" onClick={handleClick}>Reviews</Link>
                     </Nav.Item>
                     &nbsp;
-                    <Nav.Item>
-                        <Nav.Link href="/auth">Login / Sign Up</Nav.Link>
-                    </Nav.Item>
-                    &nbsp;
-                    <Nav.Item>
-                        <Nav.Link href="/" onClick={handleLogOut}>Log Out</Nav.Link>
-                    </Nav.Item>
+                    {isLoggedIn ?                     
+                        (<Nav.Item>
+                            <Link to="/" onClick={handleLogOut}>Log Out</Link>
+                        </Nav.Item>)
+                        :
+                        (<Nav.Item>
+                            <Link to="/auth">Login / Sign Up</Link>
+                        </Nav.Item>)        
+                        }
                 </Nav>
             </Navbar>
         </>

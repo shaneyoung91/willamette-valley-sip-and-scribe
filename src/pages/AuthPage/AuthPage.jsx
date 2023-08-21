@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
-export default function AuthPage({ setIsLoggedIn, setUser }) {
+export default function AuthPage({ isLoggedIn, setIsLoggedIn, setUser }) {
     const [isLoginVisible, setIsLoginVisible] = useState(true);
 
     const toggleLogin = () => {
@@ -12,9 +12,8 @@ export default function AuthPage({ setIsLoggedIn, setUser }) {
     
     return (
         <div>
-            <h3>AuthPage</h3>
             {isLoginVisible ? 
-                <LoginForm setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
+                <LoginForm setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 : <SignUpForm setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
             }
             <Button onClick={toggleLogin}>

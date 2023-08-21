@@ -15,12 +15,12 @@ export default function App() {
   return (
     <main className="App">
       <h1>Willamette Valley Sip & Scribe</h1>
-      <SideBar isLoggedIn={isLoggedIn} user={user} setUser={setUser} />
+      <SideBar isLoggedIn={isLoggedIn} user={user} setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
       &nbsp;
         <Routes>
           <Route path="/reviews/new" element={<NewReviewPage />} />
           <Route path="/wineries" element={<WineryListPage />} />
-          <Route path="/auth" element={<AuthPage setUser={setUser} setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/auth" element={<AuthPage setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/" element={<WelcomePage />} />
         </Routes>
     </main>
