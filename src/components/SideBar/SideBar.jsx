@@ -19,6 +19,7 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
     const handleLogOut = () => {
         usersService.logOut();
         setUser(null);
+        setIsLoggedIn(false);
     }
     
     return (
@@ -48,6 +49,12 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
                         }
                 </Nav>
             </Navbar>
+            &nbsp;
+            {isLoggedIn && user && (
+                <div>
+                    <h3>Welcome, {user.name}!</h3>
+                </div>
+            )}
         </>
     )
 }
