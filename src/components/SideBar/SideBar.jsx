@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import * as userService from '../../pages/utilities/users-service';
 
 
-export default function SideBar({ isLoggedIn }) {
+export default function SideBar({ isLoggedIn, user, setUser }) {
     const navigate = useNavigate();
 
     const handleClick = (evt) => {
@@ -15,6 +16,11 @@ export default function SideBar({ isLoggedIn }) {
             evt.preventDefault()
         }
     };
+
+    const handleLogOut = () => {
+        userService.logOut();
+        setUser(null);
+    }
     
     return (
         <>
@@ -34,6 +40,10 @@ export default function SideBar({ isLoggedIn }) {
                     &nbsp;
                     <Nav.Item>
                         <Nav.Link href="/auth">Login / Sign Up</Nav.Link>
+                    </Nav.Item>
+                    &nbsp;
+                    <Nav.Item>
+                        <Nav.Link href="/" onClick={handleLogOut}>Log Out</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Navbar>

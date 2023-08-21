@@ -3,7 +3,7 @@ require('dotenv').config();
 require('./config/database');
 
 // Require the Mongoose models
-// const User = require('./models/user');
+const User = require('./models/user');
 // const Review = require('./models/item');
 // const Winery = require('./models/category');
 
