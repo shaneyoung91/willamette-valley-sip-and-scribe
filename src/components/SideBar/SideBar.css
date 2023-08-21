@@ -1,0 +1,36 @@
+.sidebar {
+    flex: 0 0 250px; /* Sidebar width */
+    background-color: #d26d6d;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #9a8787;
+}
+
+.user-welcome {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.sidebar-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sidebar-title a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #d26d6d;
+}

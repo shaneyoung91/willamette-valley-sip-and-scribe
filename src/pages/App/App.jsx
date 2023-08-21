@@ -13,16 +13,19 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <main className="App">
-      <h1>Willamette Valley Sip & Scribe</h1>
-      <SideBar isLoggedIn={isLoggedIn} user={user} setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
-      &nbsp;
-        <Routes>
-          <Route path="/reviews/new" element={<NewReviewPage />} />
-          <Route path="/wineries" element={<WineryListPage />} />
-          <Route path="/auth" element={<AuthPage setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/" element={<WelcomePage />} />
-        </Routes>
-    </main>
+    <div>
+      <main className="App">
+        <SideBar isLoggedIn={isLoggedIn} user={user} setUser={setUser} setIsLoggedIn={setIsLoggedIn}/>
+        &nbsp;
+          <div className='content'>
+            <Routes>
+              <Route path="/reviews/new" element={<NewReviewPage />} />
+              <Route path="/wineries" element={<WineryListPage />} />
+              <Route path="/auth" element={<AuthPage setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+              <Route path="/" element={<WelcomePage />} />
+            </Routes>
+          </div>
+      </main>
+    </div>
   );
 }

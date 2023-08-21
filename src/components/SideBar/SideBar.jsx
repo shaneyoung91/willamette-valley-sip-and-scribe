@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
+import './SideBar.css';
 
 export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
     const navigate = useNavigate();
@@ -24,37 +25,28 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
     
     return (
         <>
-            <Navbar expand="lg">
-                <Nav>
-                    <Nav.Item>
-                        <Link to="/">About</Link>
-                    </Nav.Item>
-                    &nbsp;
-                    <Nav.Item>
-                        <Link to="/wineries">Explore Wineries</Link>
-                    </Nav.Item>
-                    &nbsp;
-                    <Nav.Item>
-                        <Link to="/reviews/new" onClick={handleClick}>Reviews</Link>
-                    </Nav.Item>
-                    &nbsp;
-                    {isLoggedIn ?                     
-                        (<Nav.Item>
-                            <Link to="/" onClick={handleLogOut}>Log Out</Link>
-                        </Nav.Item>)
-                        :
-                        (<Nav.Item>
-                            <Link to="/auth">Login / Sign Up</Link>
-                        </Nav.Item>)        
-                        }
+            <Navbar className='sidebar'>
+                <Nav className='sidebar-title'>
+                    <h1><Link to="/">Willamette Valley Sip & Scribe</Link></h1>
                 </Nav>
+                &nbsp;
+                <Nav className='flex-column'>
+                    <Link to="/">About</Link>
+                    <Link to="/wineries">Explore Wineries</Link>
+                    <Link to="/reviews/new" onClick={handleClick}>Reviews</Link>
+                    {isLoggedIn ?                     
+                        (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
+                        :
+                        (<Link to="/auth">Login / Sign Up</Link>)        
+                    }
+                </Nav>
+                &nbsp;
+                {isLoggedIn && user && (
+                    <div className="user-welcome">
+                        <h4>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h4>
+                    </div>
+                )}
             </Navbar>
-            &nbsp;
-            {isLoggedIn && user && (
-                <div>
-                    <h3>Welcome, {user.name}!</h3>
-                </div>
-            )}
         </>
     )
 }
