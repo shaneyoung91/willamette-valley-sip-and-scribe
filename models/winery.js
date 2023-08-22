@@ -6,6 +6,10 @@ const winerySchema = new Schema({
         type: String,
         required: true
     },
+    overview: {
+        type: String,
+        required: true
+    },
     address: {
         type: String,
         required: true
@@ -14,7 +18,7 @@ const winerySchema = new Schema({
         type: String
     },
     phoneNumber: {
-        type: Number
+        type: String
     },
     images: {
         type: [String],
