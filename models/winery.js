@@ -6,6 +6,9 @@ const winerySchema = new Schema({
         type: String,
         required: true
     },
+    overview: {
+        type: String,
+    },
     address: {
         type: String,
         required: true
