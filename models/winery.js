@@ -6,10 +6,6 @@ const winerySchema = new Schema({
         type: String,
         required: true
     },
-    overview: {
-        type: String,
-        required: true
-    },
     address: {
         type: String,
         required: true
@@ -26,18 +22,18 @@ const winerySchema = new Schema({
     hours: {
         type: String,
     },
-    atmospheres: {
+    atmospheres: [{
         type: Schema.Types.ObjectId,
         ref: 'Atmosphere'
-    },
-    additionalAmenities: {
+    }],
+    additionalAmenities: [{
         type: Schema.Types.ObjectId,
         ref: 'AdditionalAmenity'
-    },
-    visitingPolicies: {
+    }],
+    visitingPolicies: [{
         type: Schema.Types.ObjectId,
         ref: 'VisitingPolicy'
-    }
+    }],
 })
 
 module.exports = mongoose.model('Winery', winerySchema);

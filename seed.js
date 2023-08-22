@@ -1,3 +1,5 @@
+const ObjectId = require('mongoose').Types.ObjectId;
+
 require('dotenv').config();
 require('./config/database');
 
@@ -57,20 +59,20 @@ const AdditionalAmenity = require('./models/additionalAmenity');
         phoneNumber: '(503) 992-1196', 
         images: ['src/assets/images/Sidereus/sidereus_1.jpeg', 'src/assets/images/Sidereus/sidereus_4.jpg', 'src/assets/images/Sidereus/sidereus_3.jpeg', 'src/assets/images/Sidereus/sidereus_2.jpeg', 'src/assets/images/Sidereus/sidereus_5.jpeg'], 
         hours: 'Thursday-Monday 11am-6pm | Closed Tuesday & Wednesday',
-        atmospheres: [atmospheres[0], atmospheres[2], atmospheres[3], atmospheres[4], atmospheres[7], atmospheres[9]],
-        visitingPolicies: [visitingPolicies[0], visitingPolicies[3], visitingPolicies[5]],
-        additionalAmenities: [additionalAmenities[0], additionalAmenities[1], additionalAmenities[4], additionalAmenities[8], additionalAmenities[11]]
+        atmospheres: [atmospheres[0]._id, atmospheres[2]._id, atmospheres[3]._id, atmospheres[4]._id, atmospheres[7]._id, atmospheres[9]._id],
+        visitingPolicies: [visitingPolicies[0]._id, visitingPolicies[3]._id, visitingPolicies[5]._id],
+        additionalAmenities: [additionalAmenities[0]._id, additionalAmenities[1]._id, additionalAmenities[4]._id, additionalAmenities[8]._id, additionalAmenities[11]._id]
         },
         {name: 'Laurel Ridge Winery',
         overview: 'Founded in 1986, Laurel Ridge has a rich history and is an estate winery in the Yamhill-Carlton AVA. Finn Hill, our estate vineyard is one of the first Willakenzie soil vineyards planted. Come relax with us and taste our award winning Pinot Noir, Rosé of Pinot Noir and Pinot Gris along with our portfolio of other wonderful wines which includes some blends and single varietal big reds.',
         address: '13301 NE Kuehne Road, Carlton, OR 97111',
         website: 'https://www.laurelridgewinery.com/', 
-        phoneNumber: '(503) 852-7050', 
-        images: ['src/assets/images/LaurelRidge/laurel_1.jpeg', 'src/assets/images/LaurelRidge/laurel_2.jpeg', 'src/assets/images/LaurelRidge/laurel_3.jpeg', 'src/assets/images/LaurelRidge/laurel_4.jpeg', 'src/assets/images/LaurelRidge/laurel_5.jpeg'], 
+        phoneNumber: '(503) 852-7050',
+        images: ['src/assets/images/LaurelRidge/laurel_1.jpeg', 'src/assets/images/LaurelRidge/laurel_2.jpeg', 'src/assets/images/LaurelRidge/laurel_3.jpeg', 'src/assets/images/LaurelRidge/laurel_4.jpeg', 'src/assets/images/LaurelRidge/laurel_5.jpeg'],
         hours: 'Open 11am - 5pm, 7 days a week',
-        atmospheres: [atmospheres[2], atmospheres[3], atmospheres[5], atmospheres[7], atmospheres[9]],
-        visitingPolicies: [visitingPolicies[0], visitingPolicies[2], visitingPolicies[3], visitingPolicies[6]],
-        additionalAmenities: [additionalAmenities[1], additionalAmenities[3], additionalAmenities[4], additionalAmenities[6], additionalAmenities[9], additionalAmenities[10], additionalAmenities[11]]
+        atmospheres: [atmospheres[2]._id, atmospheres[3]._id, atmospheres[5]._id, atmospheres[7]._id, atmospheres[9]._id],
+        visitingPolicies: [visitingPolicies[0]._id, visitingPolicies[2]._id, visitingPolicies[3]._id, visitingPolicies[6]._id],
+        additionalAmenities: [additionalAmenities[1]._id, additionalAmenities[3]._id, additionalAmenities[4]._id, additionalAmenities[6]._id, additionalAmenities[9]._id, additionalAmenities[10]._id, additionalAmenities[11]._id]
         },
     ]);
 

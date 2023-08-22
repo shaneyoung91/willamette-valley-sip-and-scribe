@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const additionalAmenitySchema = new Schema({
     name: {
-        Type: String,
+        type: String,
     }
 }, {
     timestamps: true
