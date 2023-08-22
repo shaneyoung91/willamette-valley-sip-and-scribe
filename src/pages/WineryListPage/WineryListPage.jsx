@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import * as wineriesAPI from '../../utilities/wineries-api';
 import * as atmospheresAPI from '../../utilities/atmospheres-api';
 import * as additionalAmenitiesAPI from '../../utilities/additionalAmenities-api';
 import * as visitingPoliciesAPI from '../../utilities/visitingPolicies-api';
 import WineryCard from "../../components/WineryCard/WineryCard";
+import WineryDetailPage from "../WineryDetailPage/WineryDetailPage";
 
 
-export default function WineryListPage() {
-    const [wineries, setWineries] = useState([]);
-    const [atmospheres, setAtmospheres] = useState([]);
-    const [additionalAmenities, setAdditionalAmenities] = useState([]);
-    const [visitingPolicies, setVisitingPolicies] = useState([]);
-
+export default function WineryListPage({ wineries, setWineries, atmospheres, setAtmospheres, additionalAmenities, setAdditionalAmenities, visitingPolicies, setVisitingPolicies }) {
+    
     useEffect(function() {
         async function getWineries() {
             const wineries = await wineriesAPI.getAll();
@@ -42,19 +39,23 @@ export default function WineryListPage() {
 
     return (
         <div>
-            <h2>WineryListPage</h2>
-            <div>
-                {wineries.map((winery, index) => (
-                    <WineryCard
-                        winery={winery} 
-                        key={index} 
-                        index={index}
-                        atmospheres={atmospheres}
-                        additionalAmenities={additionalAmenities}
-                        visitingPolicies={visitingPolicies}
-                    />
-                ))}
-            </div>
+            <h1>Explore the Willamette Valley Region!</h1>
+            <br></br>
+            <Container>
+                <Row xs={1} md={2} lg={3} className="g-4">
+                    {wineries.map((winery, index) => (
+                        <WineryCard
+                            winery={winery} 
+                            key={winery._id}
+                            index={index}
+                            atmospheres={atmospheres}
+                            additionalAmenities={additionalAmenities}
+                            visitingPolicies={visitingPolicies}
+                            wineries={wineries}
+                        />
+                    ))}
+                </Row>
+            </Container>
         </div>
     )
 }

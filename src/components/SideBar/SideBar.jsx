@@ -12,7 +12,7 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
             navigate('/auth');
             evt.preventDefault();
         } else {
-            navigate('/reviews/new');
+            navigate('/reviews');
             evt.preventDefault();
         }
     };
@@ -33,7 +33,7 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
                 <Nav className='flex-column'>
                     <Link to="/">About</Link>
                     <Link to="/wineries">Explore Wineries</Link>
-                    <Link to="/reviews/new" onClick={handleClick}>Reviews</Link>
+                    <Link to="/reviews" onClick={handleClick}>Reviews</Link>
                     {isLoggedIn ?                     
                         (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
                         :
