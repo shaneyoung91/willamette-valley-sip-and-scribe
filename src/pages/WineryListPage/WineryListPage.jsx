@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import * as wineriesAPI from '../../utilities/wineries-api';
-import * as atmospheresAPI from '../../utilities/';
-import * as additionalAmenitiesAPI from '../../utilities/';
-import * as visitingPoliciesAPI from '../../utilities/';
+import * as atmospheresAPI from '../../utilities/atmospheres-api';
+import * as additionalAmenitiesAPI from '../../utilities/additionalAmenities-api';
+import * as visitingPoliciesAPI from '../../utilities/visitingPolicies-api';
 import WineryCard from "../../components/WineryCard/WineryCard";
 
 
@@ -48,10 +48,10 @@ export default function WineryListPage() {
                     <WineryCard
                         winery={winery} 
                         key={index} 
-                        index={index} 
-                        atmosphere={atmospheres.find(atmosphere => atmosphere.id === winery.atmospheres)}
-                        additionalAmenity={additionalAmenities.find(amenity => amenity.id === winery.additionalAmenities)}
-                        visitingPolicy={visitingPolicies.find(policy => policy.id === winery.visitingPolicies)}    
+                        index={index}
+                        atmospheres={atmospheres}
+                        additionalAmenities={additionalAmenities}
+                        visitingPolicies={visitingPolicies}
                     />
                 ))}
             </div>

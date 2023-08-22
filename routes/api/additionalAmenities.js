@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const wineriesCtrl = require('../../controllers/api/wineries');
+const additionalAmenitiesCtrl = require('../../controllers/api/additionalAmenities');
 
-// All paths start with '/api/wineries'
+// All paths start with '/api/additionalAmenities'
 
-// GET /api/wineries (get all wineries)
-router.get('/', wineriesCtrl.index)
+// GET /api/additionalAmenities (get all additionalAmenities)
+router.get('/', additionalAmenitiesCtrl.index)
 
 
 module.exports = router;
