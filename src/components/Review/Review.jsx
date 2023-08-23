@@ -8,7 +8,7 @@ export default function Review({ user, reviews, setReviews, winery }) {
         async function getReviews() {
             const reviews = await reviewsAPI.getAll();
             const wineryReviews = reviews.filter(review => review.winery === winery._id);
-            setReviews(reviews);
+            setReviews(wineryReviews);
         }
         getReviews();
     }, [winery])
@@ -25,7 +25,7 @@ export default function Review({ user, reviews, setReviews, winery }) {
             <br></br>
             {reviews.map((review) => (
                 <div>
-                    <p><strong>User: {review.author.name}</strong></p>
+                    <p><strong>Reviewed By: {review.author.name}</strong></p>
                     <ul>
                         <li key={review._id}>
                             <p><strong>Rating:</strong> {review.rating}</p>

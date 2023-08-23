@@ -3,12 +3,12 @@ import { Navbar, Nav } from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
 import './SideBar.css';
 
-export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
+export default function SideBar({ user, setUser }) {
     const navigate = useNavigate();
 
     const handleClick = (evt) => {
         // If not logged in, redirect to AuthPage
-        if (!isLoggedIn) {
+        if (!user) {
             navigate('/auth');
             evt.preventDefault();
         } else {
@@ -20,7 +20,6 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
     const handleLogOut = () => {
         usersService.logOut();
         setUser(null);
-        setIsLoggedIn(false);
     }
     
     return (
@@ -34,14 +33,14 @@ export default function SideBar({ isLoggedIn, setIsLoggedIn, user, setUser }) {
                     <Link to="/">About</Link>
                     <Link to="/wineries">Explore Wineries</Link>
                     <Link to="/reviews" onClick={handleClick}>Reviews</Link>
-                    {isLoggedIn ?                     
+                    {user ?                     
                         (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
                         :
                         (<Link to="/auth">Login / Sign Up</Link>)        
                     }
                 </Nav>
                 &nbsp;
-                {isLoggedIn && user && (
+                {user && (
                     <div className="user-welcome">
                         <h4>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h4>
                     </div>

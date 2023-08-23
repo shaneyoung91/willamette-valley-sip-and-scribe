@@ -11,7 +11,7 @@ import WelcomePage from '../WelcomePage/WelcomePage';
 import { WineryProvider } from '../../utilities/winery-context';
 
 export default function App() {  
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Replace with user state...
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);  // Replace with user state...
   const [user, setUser] = useState(getUser());
   const [wineries, setWineries] = useState([]);
   const [atmospheres, setAtmospheres] = useState([]);
@@ -23,7 +23,7 @@ export default function App() {
     <div>
       <WineryProvider>
       <main className="App">
-        <SideBar isLoggedIn={isLoggedIn} user={user} setUser={setUser} setIsLoggedIn={setIsLoggedIn} />
+        <SideBar user={user} setUser={setUser} />
         &nbsp;
           <div className='content'>
             <Routes>
@@ -40,7 +40,7 @@ export default function App() {
                   visitingPolicies={visitingPolicies} setVisitingPolicies={setVisitingPolicies} 
                   reviews={reviews} setReviews={setReviews} user={user}/>} />
 
-                <Route path="/auth" element={<AuthPage setUser={setUser} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+                <Route path="/auth" element={<AuthPage setUser={setUser} />} />
 
                 <Route path="/" element={<WelcomePage />} />
             </Routes>

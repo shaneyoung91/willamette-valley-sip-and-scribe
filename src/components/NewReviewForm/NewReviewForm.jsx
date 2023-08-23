@@ -18,7 +18,6 @@ export default function NewReviewForm({ user, handleAddReview, winery, reviews, 
         handleAddReview(newReview);
     }
 
-
     return (
         <div>
             <h2>NewReviewForm</h2>
