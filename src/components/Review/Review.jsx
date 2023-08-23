@@ -1,0 +1,35 @@
+import { useEffect } from 'react';
+import NewReviewForm from '../../components/NewReviewForm/NewReviewForm';
+import * as reviewsAPI from '../../utilities/reviews-api';
+
+export default function Review({ user, reviews, setReviews, winery }) {
+    
+    useEffect(function() {
+        async function getReviews() {
+            const reviews = await reviewsAPI.getAll();
+            setReviews(reviews);
+        }
+        getReviews();
+    }, [])
+    
+    async function handleAddReview(reviewData) {
+        const review = await reviewsAPI.add(reviewData);
+        setReviews([...reviews, review]);
+    }
+    
+    return (
+        <div>
+            <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} reviews={reviews} setReviews={setReviews}/>
+            <h2>Reviews</h2>
+            <ul>
+                {reviews.map((review) => (
+                    <li key={review._id}>
+                        <p><strong>Rating:</strong> {review.rating}</p>
+                        <p><strong>Comments:</strong> {review.comments}</p>
+                        {/* You can add edit and delete buttons here */}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}

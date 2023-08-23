@@ -21,11 +21,13 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 // Put API routes here, before the "catch all" route
+// const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/wineries', require('./routes/api/wineries'));
 app.use('/api/atmospheres', require('./routes/api/atmospheres'));
 app.use('/api/additionalAmenities', require('./routes/api/additionalAmenities'));
 app.use('/api/visitingPolicies', require('./routes/api/visitingPolicies'));
+app.use('/api/reviews', require('./routes/api/reviews'));
 
 
 // The following "catch all" route (note the *) is necessary

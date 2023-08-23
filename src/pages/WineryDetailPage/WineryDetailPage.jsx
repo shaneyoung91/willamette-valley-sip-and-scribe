@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useWineryData } from '../../utilities/winery-context';
-import { Button } from 'react-bootstrap';
+import Review from '../../components/Review/Review';
 import './WineryDetailPage.css';
 
-export default function WineryDetailPage() {
+export default function WineryDetailPage({ user, reviews, setReviews }) {
     const { wineryId } = useParams();
     const { wineries, atmospheres, additionalAmenities, visitingPolicies } = useWineryData();
 
@@ -36,10 +36,10 @@ export default function WineryDetailPage() {
     return (
         <div>
             <h3>{winery.name}</h3>
-            <img src={winery.images[0]} className='img-detail'></img>
+            <img src={winery.images[0]} className='img-detail' alt='tasting-room'></img>
             <p><b>Overview:</b> {winery.overview}</p>
             <p><b>Address:</b> {winery.address}</p>
-            <p><a href={winery.website} target="_blank">Website</a></p>
+            <p><a href={winery.website} target="_blank" rel="noreferrer">Website</a></p>
             <p><b>Phone Number:</b> {winery.phoneNumber}</p>
             {/* <p>{winery.images}</p> // Convert to img element */}
             <p><b>Hours:</b> {winery.hours}</p>
@@ -48,8 +48,8 @@ export default function WineryDetailPage() {
                 <li><b>Additional Amenities:</b> {additionalAmenityName.join(', ')}</li>
                 <li><b>Visiting Policies:</b> {visitingPolicyName.join(', ')}</li>
             </ul>
-            {/* <ReviewForm />  Add Review Form Component to Create */}
-            {/* <Reviews />  Add Review Component to show all Reviews */}
+            <br></br>
+            <Review user={user} reviews={reviews} setReviews={setReviews} winery={winery}/>
         </div>
     );
 }

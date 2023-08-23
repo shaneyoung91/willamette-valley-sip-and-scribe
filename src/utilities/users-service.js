@@ -7,6 +7,7 @@ import * as usersAPI from './users-api';
 
 export async function signUp(userData) {
     const token = await usersAPI.signUp(userData);
+    console.log('Signed up with token:', token);
     localStorage.setItem('token', token);
     return getUser();
 }
@@ -15,6 +16,7 @@ export async function login(credentials) {
     // Delegate the AJAX request to the users-api.js
     // module.
     const token = await usersAPI.login(credentials);
+    console.log('Logged in with token:', token);
     localStorage.setItem('token', token);
     return getUser();
 }
