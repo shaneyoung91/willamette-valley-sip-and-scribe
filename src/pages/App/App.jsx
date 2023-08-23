@@ -11,7 +11,7 @@ import WelcomePage from '../WelcomePage/WelcomePage';
 import { WineryProvider } from '../../utilities/winery-context';
 
 export default function App() {  
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Replace with user state...
   const [user, setUser] = useState(getUser());
   const [wineries, setWineries] = useState([]);
   const [atmospheres, setAtmospheres] = useState([]);

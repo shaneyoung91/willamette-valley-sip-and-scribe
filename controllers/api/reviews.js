@@ -1,4 +1,5 @@
-const Review = require('../../models/review')
+const Review = require('../../models/review');
+const Winery = require('../../models/winery');
 
 module.exports = {
     index,
@@ -6,9 +7,6 @@ module.exports = {
 };
 
 async function create(req, res) {
-    if (!req.user || !req.user._id) {
-        return res.status(401).json({ error: 'Unauthorized' });
-    }
     
     req.body.user = req.user._id;
 
@@ -16,12 +14,16 @@ async function create(req, res) {
         const review = await Review.create(req.body);
         res.status(201).json(review);
     } catch (error) {
-        console.error('Error creating review:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        console.log('Error creating review:', error);
     }
 }
 
 async function index(req, res) {
-    const reviews = await Review.find({})
-    res.json(reviews);
+    try { 
+        const reviews = await Review.find({}).populate('author', 'name');
+        res.json(reviews);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error: 'Internal Server Error' })
+    }
 }

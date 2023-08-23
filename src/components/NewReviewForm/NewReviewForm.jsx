@@ -16,7 +16,6 @@ export default function NewReviewForm({ user, handleAddReview, winery, reviews, 
         };
         
         handleAddReview(newReview);
-        evt.target.reset();
     }
 
 
@@ -35,7 +34,6 @@ export default function NewReviewForm({ user, handleAddReview, winery, reviews, 
                     max={5}
                     required
                 />
-
                 <label>Comments:</label>
                 <textarea
                     id="comments"
@@ -44,6 +42,7 @@ export default function NewReviewForm({ user, handleAddReview, winery, reviews, 
                 />
                 <Button type="submit">Add Review</Button>
             </form>
+            <br></br>
         </div>
     )
 }
