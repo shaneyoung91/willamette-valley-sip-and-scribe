@@ -26,7 +26,7 @@ export default function App() {
         &nbsp;
           <div className='content'>
             <Routes>
-                <Route path="/reviews" element={<MyReviewsPage reviews={reviews} setReviews={setReviews} />} />
+                <Route path="/myreviews" element={<MyReviewsPage reviews={reviews} setReviews={setReviews} />} />
                 <Route path="/wineries" element={<WineryListPage wineries={wineries}
                   setWineries={setWineries} atmospheres={atmospheres} setAtmospheres={setAtmospheres}
                   additionalAmenities={additionalAmenities} setAdditionalAmenities={setAdditionalAmenities}

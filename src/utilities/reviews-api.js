@@ -13,3 +13,7 @@ export function add(reviewData) {
 export function deleteReview(reviewId) {
     return sendRequest(`${BASE_URL}/${reviewId}`, 'DELETE')
 }
+
+export function updateReview(reviewId, updatedReviewData){
+    return sendRequest(`${BASE_URL}/${reviewId}`, 'PUT', updatedReviewData)
+}

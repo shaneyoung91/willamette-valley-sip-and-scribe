@@ -12,7 +12,7 @@ export default function SideBar({ user, setUser }) {
             navigate('/auth');
             evt.preventDefault();
         } else {
-            navigate('/reviews');
+            navigate('/myreviews');
             evt.preventDefault();
         }
     };
@@ -32,7 +32,7 @@ export default function SideBar({ user, setUser }) {
                 <Nav className="flex-column">
                     <Link to="/">About</Link>
                     <Link to="/wineries">Explore Wineries</Link>
-                    <Link to="/reviews" onClick={handleClick}>My Reviews</Link>
+                    <Link to="/myreviews" onClick={handleClick}>My Reviews</Link>
                     {user ?                     
                         (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
                         :

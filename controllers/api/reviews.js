@@ -4,7 +4,18 @@ module.exports = {
     index,
     create,
     deleteReview,
+    updateReview
 };
+
+async function updateReview(req, res) {
+    try {
+        const updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body)
+        res.status(200).json(updatedReview);
+        console.log('Review updated successfully');
+    } catch (error) {
+        console.log('Error updating review:', error);
+    }
+}
 
 async function deleteReview(req, res) {
     try {
@@ -15,7 +26,6 @@ async function deleteReview(req, res) {
         console.log('Error deleting review:', error);
     }
 }
-
 
 async function create(req, res) {
     req.body.user = req.user._id;

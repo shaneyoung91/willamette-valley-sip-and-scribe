@@ -22,7 +22,6 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
     return (
         <div>
             <h4><u>Add a Review</u></h4>
-            <br></br>
                 <Form onSubmit={handleSubmit}>
                     <Form.Label>Rating: </Form.Label>
                     &nbsp; &nbsp;
