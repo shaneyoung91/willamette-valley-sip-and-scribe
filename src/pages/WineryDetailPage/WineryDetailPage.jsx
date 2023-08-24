@@ -35,19 +35,21 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
 
     return (
         <div>
-            <h3>{winery.name}</h3>
+            <h2>{winery.name}</h2>
             <img src={winery.images[0]} className='img-detail' alt='tasting-room'></img>
-            <p><b>Overview:</b> {winery.overview}</p>
-            <p><b>Address:</b> {winery.address}</p>
-            <p><a href={winery.website} target="_blank" rel="noreferrer">Website</a></p>
-            <p><b>Phone Number:</b> {winery.phoneNumber}</p>
-            {/* <p>{winery.images}</p> // Convert to img element */}
-            <p><b>Hours:</b> {winery.hours}</p>
-            <ul>
-                <li><b>Atmosphere:</b> {atmosphereName.join(', ')}</li>
-                <li><b>Additional Amenities:</b> {additionalAmenityName.join(', ')}</li>
-                <li><b>Visiting Policies:</b> {visitingPolicyName.join(', ')}</li>
-            </ul>
+            <div>
+                <p><b>Overview:</b> {winery.overview}</p>
+                <p><b>Address:</b> {winery.address}</p>
+                <p><a href={winery.website} target="_blank" rel="noreferrer">Website</a></p>
+                <p><b>Phone Number:</b> {winery.phoneNumber}</p>
+                {/* <p>{winery.images}</p> // Convert to img element */}
+                <p><b>Hours:</b> {winery.hours}</p>
+                <ul>
+                    <li><b>Atmosphere:</b> {atmosphereName.join(', ')}</li>
+                    <li><b>Additional Amenities:</b> {additionalAmenityName.join(', ')}</li>
+                    <li><b>Visiting Policies:</b> {visitingPolicyName.join(', ')}</li>
+                </ul>
+                </div>
             <br></br>
             <Review user={user} reviews={reviews} setReviews={setReviews} winery={winery}/>
         </div>

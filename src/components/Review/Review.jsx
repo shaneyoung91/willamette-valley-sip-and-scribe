@@ -30,19 +30,17 @@ export default function Review({ user, reviews, setReviews, winery }) {
         }
     };
 
-
     return (
         <div>
             <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} reviews={reviews} setReviews={setReviews}/>
-            <h3><u>Reviews</u></h3>
+            <h4><u>Reviews</u></h4>
             <br></br>
             {reviews.map((review) => (
                 <div key={review._id} className='review-container'>
-                    <p><strong>Rating:</strong> ⭐️ {review.rating} / 5 ⭐️</p>
-                    <p><strong>Comments:</strong> {review.comments}</p>
-                    <p><strong>Reviewed By:</strong> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
+                    <p><b>Rating:</b> ⭐️ {review.rating} / 5 ⭐️</p>
+                    <p><b>Comments:</b> {review.comments}</p>
+                    <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
                     {/* // Need to figure out how to render user name when adding review vs. full page refresh */}
-                    
                     {user && user._id === review.author._id && (
                         <>
                             <Button type="submit">EDIT</Button>

@@ -21,9 +21,8 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
 
     return (
         <div>
-            <h2><u>New Review Form</u></h2>
-                <p><strong>This component will render on winery detail page</strong></p>
-                <p><strong>And allow users to create reviews for this specific winery</strong></p>
+            <h4><u>Add a Review</u></h4>
+            <br></br>
                 <Form onSubmit={handleSubmit}>
                     <Form.Label>Rating: </Form.Label>
                     &nbsp; &nbsp;
