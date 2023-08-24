@@ -25,6 +25,7 @@ export default function SignUpForm({ setUser }) {
         evt.preventDefault()
         try {
             await signUp(formData)
+            setUser(formData)
             navigate('/wineries')
         } catch (error) {
             setFormData({error: 'Sign Up Failed - Try Again'});
@@ -45,7 +46,7 @@ export default function SignUpForm({ setUser }) {
                         onChange={handleChange}
                         required
                     />
-                    &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;
                 <input
                         type="text"
                         placeholder="Email"
@@ -54,26 +55,26 @@ export default function SignUpForm({ setUser }) {
                         onChange={handleChange}
                         required
                     />
-                    &nbsp; &nbsp; &nbsp;
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={formData.password}
-                        name="password"
-                        onChange={handleChange}
-                        required
+                &nbsp; &nbsp; &nbsp;
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    name="password"
+                    onChange={handleChange}
+                    required
                     />
-                    &nbsp; &nbsp; &nbsp;
-                    <input
-                        type="password"
-                        placeholder="Confirm Password"
-                        value={formData.confirmPW}
-                        name="confirmPW"
-                        onChange={handleChange}
-                        required
+                &nbsp; &nbsp; &nbsp;
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={formData.confirmPW}
+                    name="confirmPW"
+                    onChange={handleChange}
+                    required
                     />
-                    &nbsp; &nbsp; &nbsp;
-                    <Button type="submit" disabled={disable}>Sign Up</Button>
+                &nbsp; &nbsp; &nbsp;
+                <Button type="submit" disabled={disable}>Sign Up</Button>
             </form>
             &nbsp;
         </div>

@@ -10,3 +10,6 @@ export function add(reviewData) {
     return sendRequest(BASE_URL, 'POST', reviewData);
 }
 
+export function deleteReview(reviewId) {
+    return sendRequest(`${BASE_URL}/${reviewId}`, 'DELETE')
+}

@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { useEffect } from "react";
+import { Container, Row } from "react-bootstrap";
 import * as wineriesAPI from '../../utilities/wineries-api';
 import * as atmospheresAPI from '../../utilities/atmospheres-api';
 import * as additionalAmenitiesAPI from '../../utilities/additionalAmenities-api';
 import * as visitingPoliciesAPI from '../../utilities/visitingPolicies-api';
 import WineryCard from "../../components/WineryCard/WineryCard";
-import WineryDetailPage from "../WineryDetailPage/WineryDetailPage";
 
 
 export default function WineryListPage({ wineries, setWineries, atmospheres, setAtmospheres, additionalAmenities, setAdditionalAmenities, visitingPolicies, setVisitingPolicies }) {

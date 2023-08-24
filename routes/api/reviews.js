@@ -4,8 +4,11 @@ const reviewsCtrl = require('../../controllers/api/reviews');
 
 // All paths start with '/api/reviews'
 
-// POST /api/reviews (show all review)
+// GET /api/reviews (show all reviews)
 router.get('/', reviewsCtrl.index)
+
+// DELETE /api/reviews/:id (delete review)
+router.delete('/:id', reviewsCtrl.deleteReview)
 
 // POST /api/reviews (create new review)
 router.post('/', reviewsCtrl.create)

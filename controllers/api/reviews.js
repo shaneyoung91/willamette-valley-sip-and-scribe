@@ -1,13 +1,22 @@
 const Review = require('../../models/review');
-const Winery = require('../../models/winery');
 
 module.exports = {
     index,
     create,
+    deleteReview,
 };
 
+async function deleteReview(req, res) {
+    try {
+        const review = await Review.findByIdAndDelete(req.params.id)
+        res.status(200).send('Review deleted successfully');
+    } catch (error) {
+        console.log('Error deleting review:', error);
+    }
+}
+
+
 async function create(req, res) {
-    
     req.body.user = req.user._id;
 
     try {
