@@ -1,0 +1,5 @@
+.review-container {
+    border: 1px solid #ccc; /* Border style */
+    padding: 15px; /* Add padding around each review */
+    margin-bottom: 20px; /* Add spacing between reviews */
+}

@@ -19,11 +19,10 @@
 
 .user-welcome {
     margin-top: 20px;
-    text-align: center;
-    color: #fff;
+    color: #020202;
 }
 
-.sidebar-title {
+.sidebar-title a {
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;

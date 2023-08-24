@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
 import './SideBar.css';
 
@@ -29,7 +29,7 @@ export default function SideBar({ user, setUser }) {
                     <h1><Link to="/">Willamette Valley Sip & Scribe</Link></h1>
                 </Nav>
                 &nbsp;
-                <Nav className='flex-column'>
+                <Nav className="flex-column">
                     <Link to="/">About</Link>
                     <Link to="/wineries">Explore Wineries</Link>
                     <Link to="/reviews" onClick={handleClick}>My Reviews</Link>
@@ -41,9 +41,9 @@ export default function SideBar({ user, setUser }) {
                 </Nav>
                 &nbsp;
                 {user && (
-                    <div className="user-welcome">
+                    <Navbar className="user-welcome">
                         <h4>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h4>
-                    </div>
+                    </Navbar>
                 )}
             </Navbar>
         </>

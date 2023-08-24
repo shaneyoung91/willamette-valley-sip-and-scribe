@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useEffect } from 'react';
+import './Review.css';
 import NewReviewForm from '../../components/NewReviewForm/NewReviewForm';
 import * as reviewsAPI from '../../utilities/reviews-api';
 
@@ -29,21 +30,26 @@ export default function Review({ user, reviews, setReviews, winery }) {
         }
     };
 
+
     return (
         <div>
             <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} reviews={reviews} setReviews={setReviews}/>
+            <h3><u>Reviews</u></h3>
             <br></br>
-            <h2><u>Reviews</u></h2>
             {reviews.map((review) => (
-                <div key={review._id}>
-                    <ul>
-                        <li><strong>Rating:</strong> {review.rating} ⭐️</li>
-                        <li><strong>Comments:</strong> {review.comments}</li>
-                    </ul>
-                    <p><strong>Reviewed By: {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</strong></p>
-                    <Button type="submit">EDIT</Button>
-                    &nbsp; &nbsp;
-                    <Button type="submit" onClick={() => handleDelete(review._id)}>DELETE</Button>
+                <div key={review._id} className='review-container'>
+                    <p><strong>Rating:</strong> ⭐️ {review.rating} / 5 ⭐️</p>
+                    <p><strong>Comments:</strong> {review.comments}</p>
+                    <p><strong>Reviewed By:</strong> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
+                    {/* // Need to figure out how to render user name when adding review vs. full page refresh */}
+                    
+                    {user && user._id === review.author._id && (
+                        <>
+                            <Button type="submit">EDIT</Button>
+                            &nbsp; &nbsp;
+                            <Button type="submit" onClick={() => handleDelete(review._id)}>DELETE</Button>
+                        </>
+                    )}
                 </div>
             ))}
         </div>
