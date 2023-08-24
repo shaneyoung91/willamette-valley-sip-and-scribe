@@ -9,7 +9,8 @@ module.exports = {
 async function deleteReview(req, res) {
     try {
         const review = await Review.findByIdAndDelete(req.params.id)
-        res.status(200).send('Review deleted successfully');
+        res.status(200).json(review);
+        console.log('Review deleted successfully');
     } catch (error) {
         console.log('Error deleting review:', error);
     }

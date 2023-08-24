@@ -1,6 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 
-export default function NewReviewForm({ user, handleAddReview, winery, reviews, setReviews }) {
+export default function NewReviewForm({ user, handleAddReview, winery }) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
@@ -16,6 +16,7 @@ export default function NewReviewForm({ user, handleAddReview, winery, reviews, 
         };
         
         handleAddReview(newReview);
+        evt.target.reset();
     }
 
     return (

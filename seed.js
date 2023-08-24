@@ -58,7 +58,7 @@ const AdditionalAmenity = require('./models/additionalAmenity');
         website: 'https://sidereuswinery.com/', 
         phoneNumber: '(503) 992-1196', 
         images: ['/images/Sidereus/sidereus_1.jpeg', '/images/Sidereus/sidereus_4.jpg', '/images/Sidereus/sidereus_3.jpeg', '/images/Sidereus/sidereus_2.jpeg', '/images/Sidereus/sidereus_5.jpeg'], 
-        hours: 'Thursday-Monday 11am-6pm | Closed Tuesday & Wednesday',
+        hours: 'Thursday-Monday 11am - 6pm',
         atmospheres: [atmospheres[0]._id, atmospheres[2]._id, atmospheres[3]._id, atmospheres[4]._id, atmospheres[7]._id, atmospheres[9]._id],
         visitingPolicies: [visitingPolicies[0]._id, visitingPolicies[3]._id, visitingPolicies[5]._id],
         additionalAmenities: [additionalAmenities[0]._id, additionalAmenities[1]._id, additionalAmenities[4]._id, additionalAmenities[8]._id, additionalAmenities[11]._id]
@@ -96,6 +96,28 @@ const AdditionalAmenity = require('./models/additionalAmenity');
         // visitingPolicies: [visitingPolicies[1]._id, visitingPolicies[2]._id, visitingPolicies[3]._id],
         // additionalAmenities: [additionalAmenities[1]._id, additionalAmenities[4]._id, additionalAmenities[5]._id, additionalAmenities[11]._id]
         // },
+        // {name: 'Amaterra Wines',
+        // overview: 'Located just minutes from downtown Portland, Amaterra is perched high in the slopes of the city’s West Hills. As a member, you can sip, savor, and enjoy bounty from one of the most unique wine terroirs in the country. Our estate overlooks unparalleled views of the Willamette Valley, embracing the landscape of the Pacific Northwest. At Amaterra, our process allows for the gentlest handling of fruit while maintaining desired structure and delicate aromatics. We apply a unique winemaking process using bridge cranes that allow one elevation drop to act as a multiple-level winemaking facility. This allows us to control tannin extraction and preserve delicate aromatics. The design also enables our winemaking team to see all areas of the process and improve material handling efficiency.',
+        // address: '8150 SW Swede Hill Drive, Portland, OR 97225',
+        // website: 'https://amaterrawines.com/', 
+        // phoneNumber: '(503) 961-6057',
+        // images: ['public/images/Amaterra/ama_1.png', 'public/images/Amaterra/ama_2.jpeg', 'public/images/Amaterra/ama_3.jpeg', 'public/images/Amaterra/ama_4.jpeg', 'public/images/Amaterra/ama_5.jpeg'],
+        // hours: 'Wednesday & Thursday 12pm - 8:30pm | Friday & Saturday 12pm - 9pm | Sunday 12pm - 8:30pm',
+        // atmospheres: [atmospheres[0]._id, atmospheres[4]._id, atmospheres[5]._id, atmospheres[9]._id],
+        // visitingPolicies: [visitingPolicies[3]._id, visitingPolicies[5]._id],
+        // additionalAmenities: [additionalAmenities[0]._id, additionalAmenities[4]._id, additionalAmenities[5]._id, additionalAmenities[6]._id, additionalAmenities[8]._id, additionalAmenities[9]._id, additionalAmenities[10]._id, additionalAmenities[11]._id]
+        // },
+        {name: 'Argyle Winery',
+        // overview: 'A pioneer in the Oregon wine industry, Argyle was founded in 1987 by Rollin Soles to capture the unique terroir of the Willamette Valley in a sparkling wine. Now Argyle produces one of the most diverse portfolios in Oregon Pinot Noir, Chardonnay, Riesling and Sparkling wines. Visit us in downtown Dundee, Oregon the heart of the Willamette Valley. Enjoy seated tastings in our stunning Tasting House, or on our outdoor porch or patio. You are also welcome to purchase wine (including chilled sparkling and whites) to go.',
+        // address: '691 Highway 99W, Dundee, OR 97115',
+        // website: 'https://argylewinery.com/', 
+        // phoneNumber: '(503) 538-8520',
+        images: ['public/images/Amaterra/ama_1.png', 'public/images/Amaterra/ama_2.jpeg', 'public/images/Amaterra/ama_3.jpeg', 'public/images/Amaterra/ama_4.jpeg', 'public/images/Amaterra/ama_5.jpeg'],
+        // hours: 'Monday-Thursday 11am - 5pm | Friday-Sunday 10am - 5pm',
+        atmospheres: [atmospheres[0]._id, atmospheres[4]._id, atmospheres[5]._id, atmospheres[9]._id],
+        visitingPolicies: [visitingPolicies[3]._id, visitingPolicies[5]._id],
+        additionalAmenities: [additionalAmenities[0]._id, additionalAmenities[4]._id, additionalAmenities[5]._id, additionalAmenities[6]._id, additionalAmenities[8]._id, additionalAmenities[9]._id, additionalAmenities[10]._id, additionalAmenities[11]._id]
+        },
     ]);
 
     console.log(wineries)

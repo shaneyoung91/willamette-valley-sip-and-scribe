@@ -4,7 +4,7 @@ import { Button, Card, Col, Collapse } from 'react-bootstrap';
 import './WineryCard.css';
 
 
-export default function WineryCard({ winery, wineries, key, index, atmospheres, additionalAmenities, visitingPolicies}) {
+export default function WineryCard({ winery, wineries, index, atmospheres, additionalAmenities, visitingPolicies}) {
     const [expanded, setExpanded] = useState(false);
 
     const toggleExpanded = () => {

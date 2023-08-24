@@ -11,7 +11,6 @@ import WelcomePage from '../WelcomePage/WelcomePage';
 import { WineryProvider } from '../../utilities/winery-context';
 
 export default function App() {  
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);  // Replace with user state...
   const [user, setUser] = useState(getUser());
   const [wineries, setWineries] = useState([]);
   const [atmospheres, setAtmospheres] = useState([]);
@@ -28,20 +27,16 @@ export default function App() {
           <div className='content'>
             <Routes>
                 <Route path="/reviews" element={<MyReviewsPage reviews={reviews} setReviews={setReviews} />} />
-
                 <Route path="/wineries" element={<WineryListPage wineries={wineries}
                   setWineries={setWineries} atmospheres={atmospheres} setAtmospheres={setAtmospheres}
                   additionalAmenities={additionalAmenities} setAdditionalAmenities={setAdditionalAmenities}
                   visitingPolicies={visitingPolicies} setVisitingPolicies={setVisitingPolicies} />} />
-
                 <Route path="/wineries/:wineryId" element={<WineryDetailPage wineries={wineries}
                   setWineries={setWineries} atmospheres={atmospheres} setAtmospheres={setAtmospheres}
                   additionalAmenities={additionalAmenities} setAdditionalAmenities={setAdditionalAmenities}
                   visitingPolicies={visitingPolicies} setVisitingPolicies={setVisitingPolicies} 
                   reviews={reviews} setReviews={setReviews} user={user}/>} />
-
                 <Route path="/auth" element={<AuthPage setUser={setUser} />} />
-
                 <Route path="/" element={<WelcomePage />} />
             </Routes>
           </div>

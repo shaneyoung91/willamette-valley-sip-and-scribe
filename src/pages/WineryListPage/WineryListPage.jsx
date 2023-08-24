@@ -7,7 +7,8 @@ import * as visitingPoliciesAPI from '../../utilities/visitingPolicies-api';
 import WineryCard from "../../components/WineryCard/WineryCard";
 
 
-export default function WineryListPage({ wineries, setWineries, atmospheres, setAtmospheres, additionalAmenities, setAdditionalAmenities, visitingPolicies, setVisitingPolicies }) {
+export default function WineryListPage({ wineries, setWineries, atmospheres, setAtmospheres, 
+    additionalAmenities, setAdditionalAmenities, visitingPolicies, setVisitingPolicies }) {
     
     useEffect(function() {
         async function getWineries() {
@@ -38,7 +39,7 @@ export default function WineryListPage({ wineries, setWineries, atmospheres, set
 
     return (
         <div>
-            <h1>Explore the Willamette Valley Region!</h1>
+            <h1>Explore the Willamette Valley Region</h1>
             <br></br>
             <Container>
                 <Row xs={1} md={2} lg={3} className="g-4">

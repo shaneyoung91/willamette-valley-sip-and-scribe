@@ -4,27 +4,30 @@ import NewReviewForm from '../../components/NewReviewForm/NewReviewForm';
 import * as reviewsAPI from '../../utilities/reviews-api';
 
 export default function Review({ user, reviews, setReviews, winery }) {
-    
+
     useEffect(function() {
         async function getReviews() {
             const reviews = await reviewsAPI.getAll();
             const wineryReviews = reviews.filter(review => review.winery === winery._id);
             setReviews(wineryReviews);
-        }
+        } 
         getReviews();
-    }, [winery])
+    }, [setReviews]);
     
     async function handleAddReview(reviewData) {
         const review = await reviewsAPI.add(reviewData);
         setReviews([...reviews, review]);
-    }
+    };
 
     async function handleDelete(reviewId) {
-        const review = await reviewsAPI.deleteReview(reviewId);
-        // reviewId is the id passed
-        // filter method
-        setReviews([...reviews, review])
-    }
+        try {
+            await reviewsAPI.deleteReview(reviewId);
+            const availReviews = reviews.filter(review => review._id !== reviewId)
+            setReviews(availReviews);
+        } catch (error) {
+            console.log('Error deleting review on front-end:', error);
+        }
+    };
 
     return (
         <div>
@@ -32,8 +35,8 @@ export default function Review({ user, reviews, setReviews, winery }) {
             <br></br>
             <h2><u>Reviews</u></h2>
             {reviews.map((review) => (
-                <div>
-                    <ul key={review._id}>
+                <div key={review._id}>
+                    <ul>
                         <li><strong>Rating:</strong> {review.rating} ⭐️</li>
                         <li><strong>Comments:</strong> {review.comments}</li>
                     </ul>
