@@ -35,9 +35,8 @@ export default function Review({ user, reviews, setReviews, winery }) {
     async function handleUpdate(editReview) {
         try {
             await reviewsAPI.updateReview(editReview._id, editReview);
-            const editReviews = reviews.map(review =>
-                review._id === editReview._id ? editReview : review
-            );
+            const editReviews = reviews.map(review => review._id === 
+                editReview._id ? editReview : review);
             setReviews(editReviews);
             setEditReviewId(null);
         } catch (error) {

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
 import './SideBar.css';
 
