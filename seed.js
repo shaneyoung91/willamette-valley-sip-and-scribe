@@ -74,6 +74,28 @@ const AdditionalAmenity = require('./models/additionalAmenity');
         visitingPolicies: [visitingPolicies[0]._id, visitingPolicies[2]._id, visitingPolicies[3]._id, visitingPolicies[6]._id],
         additionalAmenities: [additionalAmenities[1]._id, additionalAmenities[3]._id, additionalAmenities[4]._id, additionalAmenities[6]._id, additionalAmenities[9]._id, additionalAmenities[10]._id, additionalAmenities[11]._id]
         },
+        // {name: 'Adelsheim Vineyard',
+        // overview: 'Adelsheim, located in Newberg, Ore., was founded with an optimistic spirit and a lofty dream: to create world-class Pinot noir and Chardonnay in an undiscovered wine region, the Chehalem Mountains. Since 1971, we have obsessively pursued exceptional wines of place, that celebrate the unique bounty of our estate vineyards. As a founding winery of the Willamette Valley and Chehalem Mountains first winery, Adelsheim has played an instrumental role in nearly every aspect of the Oregon wine story. As leaders, we believe it is our duty to be steadfast stewards of this abundant land and to rally our community in support of equity and education. Adelsheim is a LIVE certified sustainable winery, and a seven-time Wine & Spirits Top 100 Winery.',
+        // address: '16800 NE Calkins Lane, Newberg, OR 97132',
+        // website: 'https://www.adelsheim.com/', 
+        // phoneNumber: '(503) 538-3652',
+        // images: ['public/images/Adelsheim/adel_1.jpeg', 'public/images/Adelsheim/adel_2.jpeg', 'public/images/Adelsheim/adel_3.jpeg', 'public/images/Adelsheim/adel_4.png', 'public/images/Adelsheim/adel_5.jpeg'],
+        // hours: 'Daily, 10:30am - 4pm',
+        // atmospheres: [atmospheres[0]._id, atmospheres[1]._id, atmospheres[2]._id, atmospheres[3]._id, atmospheres[4]._id, atmospheres[5]._id, atmospheres[7]._id, atmospheres[9]._id],
+        // visitingPolicies: [visitingPolicies[1]._id, visitingPolicies[2]._id, visitingPolicies[3]._id],
+        // additionalAmenities: [additionalAmenities[0]._id, additionalAmenities[1]._id, additionalAmenities[2]._id, additionalAmenities[3]._id, additionalAmenities[4]._id, additionalAmenities[5]._id, additionalAmenities[6]._id, additionalAmenities[7]._id, additionalAmenities[9]._id, additionalAmenities[10]._id, additionalAmenities[11]._id]
+        // },
+        // {name: 'Alloro Vineyard',
+        // overview: 'Alloro Vineyard is 110 acres of uniquely contoured, loess-derived, Laurelwood soil. Located on a southwest-facing slope in Oregon's Chehalem Mountains, this special place is the heart and soul of our wines and is personally cared for by founder David Nemarnik. We are a limited production producer of 100% Estate wines, crafting all our wines from our sustainably farmed single vineyard site, which also hosts a diverse mixture of many other crops, plants, and animals forming an extraordinary whole farm setting. Our UC Davis educated, Burgundy trained winemaker, Tom Fitzpatrick, believes that a wine should be an "expression of place, at a moment in time" and should therefore capture the unique personality of a site as it is expressed in each vintage. Terroir-driven wines that reflect this philosophy are our focus.',
+        // address: '22185 SW Lebeau Road, Sherwood, OR 97140',
+        // website: 'https://www.allorovineyard.com/', 
+        // phoneNumber: '(503) 625-1978',
+        // images: ['public/images/Alloro/alloro_1.jpeg', 'public/images/Alloro/alloro_2.jpeg', 'public/images/Alloro/alloro_3.jpeg', 'public/images/Alloro/alloro_4.jpeg', 'public/images/Alloro/alloro_5.jpeg'],
+        // hours: 'Daily, 11am - 5pm',
+        // atmospheres: [atmospheres[0]._id, atmospheres[4]._id, atmospheres[5]._id, atmospheres[9]._id],
+        // visitingPolicies: [visitingPolicies[1]._id, visitingPolicies[2]._id, visitingPolicies[3]._id],
+        // additionalAmenities: [additionalAmenities[1]._id, additionalAmenities[4]._id, additionalAmenities[5]._id, additionalAmenities[11]._id]
+        // },
     ]);
 
     console.log(wineries)
