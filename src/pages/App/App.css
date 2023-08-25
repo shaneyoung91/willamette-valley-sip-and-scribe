@@ -1,12 +1,5 @@
-/* Reset box sizing */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .App {
-  background-color: lightgray;
+  background-color: rgba(185, 123, 123, 0.627);
 }
 
 /* Basic layout */
@@ -17,5 +10,5 @@
 
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
 }

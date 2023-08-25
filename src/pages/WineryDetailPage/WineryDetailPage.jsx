@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useWineryData } from '../../utilities/winery-context';
 import Review from '../../components/Review/Review';
-import { Carousel, Image, Accordion } from 'react-bootstrap';
+import { Carousel, Image, Accordion, Card } from 'react-bootstrap';
 import './WineryDetailPage.css';
 
 export default function WineryDetailPage({ user, reviews, setReviews }) {
@@ -36,22 +36,30 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
 
     return (
         <div>
-            <div className='carousel-container' >
-                <Carousel slide={false} fade>
+            <div>
+                <Carousel data-bs-theme="dark" fade>
                     {winery.images.map((image, index) => (
                         <Carousel.Item key={index}>
-                            <Image src={image} className="img-detail" alt={`winery-${index}`} fluid></Image>
+                            <div className='carousel-container'>
+                                <Image src={image} className="img-detail" alt={`winery-${index}`} fluid></Image>
+                            </div>
                         </Carousel.Item>
                     ))}
                 </Carousel>
             </div>
+            <br></br>
             <div className='winery-detail-body'>
-                <h2>{winery.name}</h2>
-                <p><b>Overview:</b> {winery.overview}</p>
-                <p><b>Address:</b> {winery.address}</p>
-                <p><a href={winery.website} target="_blank" rel="noreferrer">Website</a></p>
-                <p><b>Phone Number:</b> {winery.phoneNumber}</p>
-
+                <Card>
+                    <Card.Header as="h3" className='text-center'>{winery.name}</Card.Header>
+                    <Card.Body>
+                        <Card.Text>{winery.overview}</Card.Text>
+                    </Card.Body>
+                    <Card.Body>
+                        <Card.Text><b>Address:</b> {winery.address}</Card.Text>
+                        <Card.Text><b>Phone Number:</b> {winery.phoneNumber}</Card.Text>
+                        <Card.Text><a href={winery.website} target="_blank" rel="noreferrer">Website</a></Card.Text>
+                    </Card.Body>
+                </Card>
                 <Accordion>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Hours & Visiting Policies</Accordion.Header>
@@ -90,7 +98,9 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
                 </Accordion>
                 </div>
             <br></br>
-            <Review user={user} reviews={reviews} setReviews={setReviews} winery={winery}/>
+            <div className='grid-container'>
+                <Review user={user} reviews={reviews} setReviews={setReviews} winery={winery}/>
+            </div>
         </div>
     );
 }

@@ -15,8 +15,8 @@ export default function Review({ user, reviews, setReviews, winery }) {
             setReviews(wineryReviews);
         } 
         getReviews();
-    }, [setReviews]);
-    
+    }, [winery._id, setReviews]);
+
     async function handleAddReview(reviewData) {
         const review = await reviewsAPI.add(reviewData);
         setReviews([...reviews, review]);
@@ -54,24 +54,19 @@ export default function Review({ user, reviews, setReviews, winery }) {
             <br></br>
             {sortedReviews.map((review) => (
                 <div key={review._id} className='review-container'>
-                    {editReviewId === review._id ? (
-                        <UpdateReviewForm
-                            review={review}
-                            handleUpdate={handleUpdate}
-                        />
-                    ) : (
-                        <div>
-                            <p><b>Rating:</b> ⭐️ {review.rating} / 5 ⭐️</p>
+                    {editReviewId === review._id ? (<UpdateReviewForm review={review} handleUpdate={handleUpdate}/>)
+                    : (<div>
+                            <p><b>Rating (out of 5):</b> ⭐️ {review.rating} / 5 ⭐️</p>
                             <p><b>Comments:</b> {review.comments}</p>
-                            <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
-                            {/* // Need to figure out how to render user name when adding review vs. full page refresh */}
+                            {user && <p><b>Reviewed By:</b> {user.name} on {new Date(review.createdAt).toLocaleDateString()}</p>}
+                            {!user && <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>}
                             {user && user._id === review.author._id && (
                                 <>
                                     <Button type="submit" onClick={() => setEditReviewId(review._id)}>EDIT</Button>
                                     &nbsp; &nbsp;
                                     <Button type="submit" onClick={() => handleDelete(review._id)}>DELETE</Button>
                                 </>
-                            )}
+                            )} 
                         </div>
                     )}
                 </div>

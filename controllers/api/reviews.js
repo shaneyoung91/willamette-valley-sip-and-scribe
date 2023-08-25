@@ -1,11 +1,23 @@
 const Review = require('../../models/review');
+const User = require('../../models/user');
 
 module.exports = {
     index,
     create,
     deleteReview,
-    updateReview
+    updateReview,
+    // myReviews
 };
+
+// async function myReviews(req, res) {
+//     try {
+//         const userId = req.user.id;
+//         const userReviews = await Review.find({author: userId});
+//         res.json(userReviews);
+//     } catch (error) {
+//         console.log('Error showing your reviews:', error);
+//     }
+// }
 
 async function updateReview(req, res) {
     try {
@@ -43,7 +55,7 @@ async function index(req, res) {
         const reviews = await Review.find({}).populate('author', 'name');
         res.json(reviews);
     } catch (error) {
-        console.log(error);
+        console.log('Error showing all reviews:', error);
         res.status(500).json({error: 'Internal Server Error' })
     }
 }

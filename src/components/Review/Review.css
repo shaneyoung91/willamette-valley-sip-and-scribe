@@ -3,11 +3,3 @@
     padding: 15px; /* Add padding around each review */
     margin-bottom: 20px; /* Add spacing between reviews */
 }
-
-.non-user-message {
-    color: tomato;
-}
-
-/* .review-body {
-    background-color: lightgray;
-} */

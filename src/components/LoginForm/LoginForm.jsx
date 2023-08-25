@@ -33,40 +33,41 @@ export default function LoginForm({ setUser }) {
     }
 
     return (
-        <div>
+        <>
             <h2>Login</h2>
             <br></br>
             <div>
-                <Form autoComplete="off" onSubmit={handleSubmit}>
-                    <FloatingLabel controlId="floatingInput" label='Email Address'>
+                <Form autoComplete='off' onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail" >
+                        <Form.Label>Email Address</Form.Label>
                         <Form.Control
                             type="email" 
                             name="email" 
-                            placeholder="name@example.com" 
+                            placeholder="Enter email" 
                             value={credentials.email} 
                             onChange={handleChange} 
-                            style={{height: '50px', width: '40%'}}
+                            style={{width: '40%'}}
                             required 
                         />
-                    </FloatingLabel>
-                    <br></br>
-                    <FloatingLabel controlId="floatingInput" label='Password'>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
                         <Form.Control
-                        type="password" 
-                        name="password" 
-                        placeholder="Password" 
-                        value={credentials.password} 
-                        onChange={handleChange}
-                        style={{height: '50px', width: '40%'}}
-                        required 
-                    />
-                    </FloatingLabel>
+                            type="password" 
+                            name="password" 
+                            placeholder="Password" 
+                            value={credentials.password} 
+                            onChange={handleChange}
+                            style={{width: '40%'}}
+                            required 
+                        />
                     <br></br>
-                    <Button type="submit">LOG IN</Button>
-                </Form>            
+                    <Button type="submit">SUBMIT</Button>
+                </Form.Group>   
+                </Form>         
             </div>
             <br></br>
             <p className="error-message">&nbsp;{error}</p>
-        </div>
+        </>
         );
     }

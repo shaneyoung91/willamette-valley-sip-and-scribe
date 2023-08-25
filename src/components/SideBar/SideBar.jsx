@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import * as usersService from '../../utilities/users-service';
-// import './SideBar.css';
+import './SideBar.css';
 
 export default function SideBar({ user, setUser }) {
     const navigate = useNavigate();
@@ -24,23 +24,18 @@ export default function SideBar({ user, setUser }) {
     
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <Navbar collapseOnSelect expand="lg" className="sidebar">
                 <Container>
                     <Navbar.Brand><h2>Willamette Valley Sip & Scribe</h2></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            &nbsp; &nbsp;
                             <br></br>
                             <Link to="/">About</Link>
-                            &nbsp; &nbsp;
-                            &nbsp; &nbsp;
                             <Link to="/wineries">Explore Wineries</Link>
-                            &nbsp; &nbsp;
-                            &nbsp; &nbsp;
-                            <Link to="/myreviews" onClick={handleClick}>My Reviews</Link>
-                            &nbsp; &nbsp;
-                            &nbsp; &nbsp;
+                            {/* &nbsp; &nbsp;
+                            &nbsp; &nbsp; */}
+                            {/* <Link to="/myreviews" onClick={handleClick}>My Reviews</Link> */}
                             {user ?                     
                                 (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
                                 :
@@ -51,31 +46,13 @@ export default function SideBar({ user, setUser }) {
                         <Nav>
                             {user && (
                                 <Navbar>
-                                    <h5>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h5>
+                                    <h6>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h6>
                                 </Navbar>
                             )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-                {/* &nbsp;
-                <Nav>
-                    <Link to="/">About</Link>
-                    <Link to="/wineries">Explore Wineries</Link>
-                    <Link to="/myreviews" onClick={handleClick}>My Reviews</Link>
-                    {user ?                     
-                        (<Link to="/" onClick={handleLogOut}>Log Out</Link>)
-                        :
-                        (<Link to="/auth">Login / Sign Up</Link>)        
-                    }
-                </Nav>
-                &nbsp;
-                {user && (
-                    <Navbar className="user-welcome">
-                        <h4>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h4>
-                    </Navbar>
-                )}
-            </Navbar> */}
         </>
     )
 }

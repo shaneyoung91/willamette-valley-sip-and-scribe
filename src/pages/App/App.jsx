@@ -5,7 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import WineryListPage from '../WineryListPage/WineryListPage';
 import WineryDetailPage from '../WineryDetailPage/WineryDetailPage';
-import MyReviewsPage from '../MyReviewsPage/MyReviewsPage';
+// import MyReviewsPage from '../MyReviewsPage/MyReviewsPage';
 import SideBar from '../../components/SideBar/SideBar';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import { WineryProvider } from '../../utilities/winery-context';
@@ -26,7 +26,7 @@ export default function App() {
         &nbsp;
           <div className='content'>
             <Routes>
-                <Route path="/myreviews" element={<MyReviewsPage reviews={reviews} setReviews={setReviews} />} />
+                {/* <Route path="/myreviews" element={<MyReviewsPage user={user} reviews={reviews} setReviews={setReviews} />} /> */}
                 <Route path="/wineries" element={<WineryListPage wineries={wineries}
                   setWineries={setWineries} atmospheres={atmospheres} setAtmospheres={setAtmospheres}
                   additionalAmenities={additionalAmenities} setAdditionalAmenities={setAdditionalAmenities}

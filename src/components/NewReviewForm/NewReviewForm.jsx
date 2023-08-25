@@ -23,7 +23,7 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
         <div>
             <h4><u>Add a Review</u></h4>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Label>Rating: </Form.Label>
+                    <Form.Label>Rating (out of 5): </Form.Label>
                     &nbsp; &nbsp;
                     <input
                         type="number"
@@ -45,7 +45,7 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
                         />
                     </FloatingLabel>
                     <br></br>
-                    <Button type="submit">ADD REVIEW</Button>
+                    <Button type="submit" variant='danger'>ADD REVIEW</Button>
                 </Form>
             <br></br>
         </div>

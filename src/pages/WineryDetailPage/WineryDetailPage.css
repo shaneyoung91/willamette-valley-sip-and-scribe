@@ -1,28 +1,34 @@
-.winery-detail-body {
-    background-color: lightgray;
+/* Default styles for larger screens */
+.img-detail-container {
+    width: 50%;
+    height: 50%; /* Maintain aspect ratio based on width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust styles for smaller screens using media queries */
+@media (max-width: 800px) {
+    .img-detail-container {
+        width: 80%;
+    }
 }
 
 .carousel-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Set a desired height for centering vertically */
-    background-color: lightgray;
+    height: 575px; /* Set a fixed height for the carousel */
+    background-color: rgba(242, 234, 234, 0.04);
 }
 
-/* Default styles for larger screens */
 .img-detail {
-    width: 100%; /* Image will take up full width of parent container */
-    max-width: 800px;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover;
+    width: auto;
+    max-height: 100%;
+    display: block;
 }
 
-  /* Adjust styles for smaller screens using media queries */
-@media (max-width: 700px) {
-    .img-detail {
-        width: 80%; /* Adjust width for smaller screens */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover;
-    }
+.winery-detail-body {
+    color: rgba(79, 29, 29, 0.82)
 }
+

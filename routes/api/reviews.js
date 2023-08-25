@@ -7,6 +7,9 @@ const reviewsCtrl = require('../../controllers/api/reviews');
 // GET /api/reviews (show all reviews)
 router.get('/', reviewsCtrl.index)
 
+// GET /api/reviews (show all of user's reviews)
+// router.get('/myreviews/:userId', reviewsCtrl.myReviews)
+
 // DELETE /api/reviews/:id (delete review)
 router.delete('/:id', reviewsCtrl.deleteReview)
 

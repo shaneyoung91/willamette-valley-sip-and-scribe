@@ -6,6 +6,10 @@ export function getAll() {
     return sendRequest(BASE_URL);
 }
 
+// export function getAllMyReviews(userId) {
+//     return sendRequest(`${BASE_URL}/myreviews/${userId}`);
+// }
+
 export function add(reviewData) {
     return sendRequest(BASE_URL, 'POST', reviewData);
 }

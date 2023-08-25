@@ -39,57 +39,66 @@ export default function SignUpForm({ setUser }) {
             <h2>Sign Up</h2>
             <br></br>
             <Form autoComplete='off' onSubmit={handleSignUp}>
-                <FloatingLabel controlId="floatingInput" label='Name'>
-                    <Form.Control
-                        type="text"
-                        placeholder="Name"
-                        value={formData.name}
-                        name="name"
-                        onChange={handleChange}
-                        style={{height: '50px', width: '40%'}}
-                        required
-                    />
-                </FloatingLabel>
-                &nbsp; &nbsp; &nbsp;
-                <FloatingLabel controlId="floatingInput" label='Email Address'>
-                    <Form.Control
-                        type="email"
-                        placeholder="Email Address"
-                        value={formData.email}
-                        name="email"
-                        onChange={handleChange}
-                        style={{height: '50px', width: '40%'}}
-                        required
+                <Form.Group className="mb-3">
+                    <Form.Label>Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Name"
+                            value={formData.name}
+                            name="name"
+                            onChange={handleChange}
+                            style={{height: '50px', width: '40%'}}
+                            required
                         />
-                </FloatingLabel>
-                &nbsp; &nbsp; &nbsp;
-                <FloatingLabel controlId="floatingInput" label='Password'>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        value={formData.password}
-                        name="password"
-                        onChange={handleChange}
-                        style={{height: '50px', width: '40%'}}
-                        required
-                        />
-                </FloatingLabel>
-                &nbsp; &nbsp; &nbsp;
-                <FloatingLabel controlId="floatingInput" label='Confirm Password'>
-                    <Form.Control
-                        type="password"
-                        placeholder="Confirm Password"
-                        value={formData.confirmPW}
-                        name="confirmPW"
-                        onChange={handleChange}
-                        style={{height: '50px', width: '40%'}}
-                        required
-                        />
-                </FloatingLabel>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId='formBasicPassword'> 
+                    <Form.Label>Email Address</Form.Label>
+                        <Form.Control
+                            type="email"
+                            placeholder="Email Address"
+                            value={formData.email}
+                            name="email"
+                            onChange={handleChange}
+                            style={{height: '50px', width: '40%'}}
+                            required
+                            />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label controlId="floatingInput" label='Password'>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            value={formData.password}
+                            name="password"
+                            onChange={handleChange}
+                            style={{height: '50px', width: '40%'}}
+                            required
+                            />
+                        <Form.Text className="text-muted">
+                            Password must be at least 3 characters long.
+                        </Form.Text>
+                </Form.Group>
+
+                &nbsp; &nbsp;
+                
+                <Form.Group>
+                    <Form.Label controlId="floatingInput" label='Confirm Password'>Confirm Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Confirm Password"
+                            value={formData.confirmPW}
+                            name="confirmPW"
+                            onChange={handleChange}
+                            style={{height: '50px', width: '40%'}}
+                            required
+                            />
+                </Form.Group>
                 <br></br>
-                <Button type="submit" disabled={disable}>Sign Up</Button>
+                <Button type="submit" disabled={disable}>SIGN UP</Button>
             </Form>
-            &nbsp;
+            <br></br>
+            <br></br>
         </div>
     )
 }
