@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div>
       <WineryProvider>
-      <main className="App">
+      <div className="App">
         <SideBar user={user} setUser={setUser} />
         &nbsp;
           <div className='content'>
@@ -40,7 +40,7 @@ export default function App() {
                 <Route path="/" element={<WelcomePage />} />
             </Routes>
           </div>
-      </main>
+      </div>
       </WineryProvider>
     </div>
   );

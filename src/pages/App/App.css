@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.App {
+  background-color: lightgray;
+}
+
 /* Basic layout */
 .app-container {
   display: flex;

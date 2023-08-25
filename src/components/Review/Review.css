@@ -7,3 +7,7 @@
 .non-user-message {
     color: tomato;
 }
+
+.review-body {
+    background-color: lightgray;
+}

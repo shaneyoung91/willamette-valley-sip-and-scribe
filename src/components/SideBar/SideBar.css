@@ -1,12 +1,12 @@
 .sidebar {
     flex: 0 0 250px; /* Sidebar width */
-    background-color: #d26d6d;
-    color: #fff;
+    color: #060505;
     padding-top: 20px;
+    background-color: lightgray;
 }
 
 .sidebar a {
-    color: #fff;
+    color: #090707;
     text-decoration: none;
     padding: 10px;
     display: block;
@@ -23,13 +23,13 @@
 }
 
 .sidebar-title a {
-    color: #fff;
-    font-size: 1.5rem;
+    color: #000000;
+    font-size: 2.25rem;
     font-weight: bold;
 }
 
 .sidebar-title a:hover {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
-    background-color: #d26d6d;
+    background-color: #9a8787;
 }

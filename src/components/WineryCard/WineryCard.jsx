@@ -15,15 +15,17 @@ export default function WineryCard({ winery, wineries, index, atmospheres, addit
         <>
             <Col xs={12} md={6} lg={4} className='g-4'>
                 <Card className={`card-container ${expanded ? 'card-expanded' : ''}`}>
-                    <Link to={`/wineries/${(winery._id)}`} wineries={wineries} atmospheres={atmospheres} additionalAmenities={additionalAmenities} visitingPolicies={visitingPolicies}>
-                        <Card.Img variant="top" src={winery.images[0]} className="card-image" />
-                    </Link>
+                    <Card.Img variant="top" src={winery.images[0]} className="card-image" />
                     <Card.Body>
                         <Card.Title>{winery.name}</Card.Title>
                         <Card.Text>{expanded ? winery.overview : winery.overview.slice(0, 120) + '...'}</Card.Text>
                         <Button variant="primary" onClick={toggleExpanded}>
                             {expanded ? 'Collapse' : 'Expand'}
                         </Button>
+                        &nbsp; &nbsp;
+                        <Link to={`/wineries/${(winery._id)}`} wineries={wineries} atmospheres={atmospheres} additionalAmenities={additionalAmenities} visitingPolicies={visitingPolicies}>
+                            More Info
+                        </Link>
                         <Collapse in={expanded}>
                         <div></div>
                         </Collapse>

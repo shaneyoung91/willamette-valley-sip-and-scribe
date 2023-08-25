@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Form, Input } from 'react-bootstrap';
 import { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
 import { useNavigate } from 'react-router-dom';
@@ -36,9 +36,10 @@ export default function SignUpForm({ setUser }) {
 
     return (
         <div>
-            <h2>Sign Up</h2>
-            <form autoComplete='off' onSubmit={handleSignUp}>
-                <input
+            <h2 className='page-title'>Sign Up</h2>
+            <br></br>
+            <Form autoComplete='off' onSubmit={handleSignUp}>
+                <Form.Control
                         type="text"
                         placeholder="Name"
                         value={formData.name}
@@ -47,8 +48,8 @@ export default function SignUpForm({ setUser }) {
                         required
                     />
                 &nbsp; &nbsp; &nbsp;
-                <input
-                        type="text"
+                <Form.Control
+                        type="email"
                         placeholder="Email"
                         value={formData.email}
                         name="email"
@@ -56,7 +57,7 @@ export default function SignUpForm({ setUser }) {
                         required
                     />
                 &nbsp; &nbsp; &nbsp;
-                <input
+                <Form.Control
                     type="password"
                     placeholder="Password"
                     value={formData.password}
@@ -65,7 +66,7 @@ export default function SignUpForm({ setUser }) {
                     required
                     />
                 &nbsp; &nbsp; &nbsp;
-                <input
+                <Form.Control
                     type="password"
                     placeholder="Confirm Password"
                     value={formData.confirmPW}
@@ -73,9 +74,9 @@ export default function SignUpForm({ setUser }) {
                     onChange={handleChange}
                     required
                     />
-                &nbsp; &nbsp; &nbsp;
+                <br></br>
                 <Button type="submit" disabled={disable}>Sign Up</Button>
-            </form>
+            </Form>
             &nbsp;
         </div>
     )

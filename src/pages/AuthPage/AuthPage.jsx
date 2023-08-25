@@ -11,7 +11,7 @@ export default function AuthPage({ setUser }) {
     }
     
     return (
-        <div>
+        <div className='page-title'>
             {isLoginVisible ? 
                 <LoginForm setUser={setUser}/>
                 : <SignUpForm setUser={setUser}/>

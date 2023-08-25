@@ -1,4 +1,28 @@
+.winery-detail-body {
+    background-color: lightgray;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set a desired height for centering vertically */
+    background-color: lightgray;
+}
+
+/* Default styles for larger screens */
 .img-detail {
-    height: 400px;
-    width: auto
+    width: 100%; /* Image will take up full width of parent container */
+    max-width: 800px;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+}
+
+  /* Adjust styles for smaller screens using media queries */
+@media (max-width: 700px) {
+    .img-detail {
+        width: 80%; /* Adjust width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+    }
 }

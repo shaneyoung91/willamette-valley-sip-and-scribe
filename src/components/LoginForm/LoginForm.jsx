@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
@@ -36,16 +36,13 @@ export default function LoginForm({ setUser }) {
         <div>
             <h2>Login</h2>
             <div>
-                <form autoComplete="off" onSubmit={handleSubmit}>
-                    <label>Email:</label> &nbsp;
-                        <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-                        &nbsp; &nbsp;
-                    <label>Password:</label> &nbsp;
-                        <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-                        &nbsp; &nbsp;
+                <Form autoComplete="off" onSubmit={handleSubmit}>
+                    <Form.Control type="email" name="email" placeholder="Email" value={credentials.email} onChange={handleChange} required />
+                    <br></br>
+                    <Form.Control type="password" name="password" placeholder="Password" value={credentials.password} onChange={handleChange} required />
+                    <br></br>
                     <Button type="submit">LOG IN</Button>
-                </form>
-                &nbsp; &nbsp;                
+                </Form>            
             </div>
             <p className="error-message">&nbsp;{error}</p>
         </div>

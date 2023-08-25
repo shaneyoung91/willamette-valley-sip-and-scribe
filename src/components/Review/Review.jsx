@@ -49,7 +49,7 @@ export default function Review({ user, reviews, setReviews, winery }) {
     });
 
     return (
-        <div>
+        <div className="review-body">
             <h4><u>Reviews</u></h4>
             <br></br>
             {sortedReviews.map((review) => (

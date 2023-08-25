@@ -1,14 +1,15 @@
+
 .card-container {
-    height: 275px; /* Adjust the desired card height */
+    height: 300px; /* Adjust the desired card height */
     overflow: hidden;
 }
 
 .card-expanded {
-    height: 300px;
+    height: 350px;
     overflow: visible;
 } 
 
 .card-image {
-    height: 200px; /* Adjust the desired image height */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    height: 250px; /* Adjust the desired image height */
+    /* object-fit: cover; Maintain aspect ratio and cover the container */
 }
