@@ -51,16 +51,17 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
                 <p><b>Address:</b> {winery.address}</p>
                 <p><a href={winery.website} target="_blank" rel="noreferrer">Website</a></p>
                 <p><b>Phone Number:</b> {winery.phoneNumber}</p>
-                <p><b>Hours:</b> {winery.hours}</p>
+
                 <Accordion>
                     <Accordion.Item eventKey="0">
-                        <Accordion.Header>Visiting Policies</Accordion.Header>
+                        <Accordion.Header>Hours & Visiting Policies</Accordion.Header>
                             <Accordion.Body>
                             <ul>
                                 {visitingPolicyName.map((name, index) => (
                                     <li key={index}>{name}</li>
                                 ))}
                             </ul>
+                            <p><b>Hours of Operation - </b> {winery.hours}</p>
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">

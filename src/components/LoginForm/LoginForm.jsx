@@ -1,4 +1,4 @@
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, FloatingLabel } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
@@ -35,15 +35,37 @@ export default function LoginForm({ setUser }) {
     return (
         <div>
             <h2>Login</h2>
+            <br></br>
             <div>
                 <Form autoComplete="off" onSubmit={handleSubmit}>
-                    <Form.Control type="email" name="email" placeholder="Email" value={credentials.email} onChange={handleChange} required />
+                    <FloatingLabel controlId="floatingInput" label='Email Address'>
+                        <Form.Control
+                            type="email" 
+                            name="email" 
+                            placeholder="name@example.com" 
+                            value={credentials.email} 
+                            onChange={handleChange} 
+                            style={{height: '50px', width: '40%'}}
+                            required 
+                        />
+                    </FloatingLabel>
                     <br></br>
-                    <Form.Control type="password" name="password" placeholder="Password" value={credentials.password} onChange={handleChange} required />
+                    <FloatingLabel controlId="floatingInput" label='Password'>
+                        <Form.Control
+                        type="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        value={credentials.password} 
+                        onChange={handleChange}
+                        style={{height: '50px', width: '40%'}}
+                        required 
+                    />
+                    </FloatingLabel>
                     <br></br>
                     <Button type="submit">LOG IN</Button>
                 </Form>            
             </div>
+            <br></br>
             <p className="error-message">&nbsp;{error}</p>
         </div>
         );

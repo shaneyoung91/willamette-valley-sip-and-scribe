@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, FloatingLabel } from "react-bootstrap";
 
 export default function NewReviewForm({ user, handleAddReview, winery }) {
 
@@ -34,13 +34,16 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
                         required
                     />
                     <br></br>
-                    <Form.Label>Comments: </Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        id="comments"
-                        name="comments"
-                        required
-                    />
+                    <FloatingLabel label="Leave a comment here">
+                        <Form.Control
+                            as="textarea"
+                            id="comments"
+                            name="comments"
+                            placeholder="Leave a comment here"
+                            style={{width: '50%', height: '100px'}}
+                            required
+                        />
+                    </FloatingLabel>
                     <br></br>
                     <Button type="submit">ADD REVIEW</Button>
                 </Form>

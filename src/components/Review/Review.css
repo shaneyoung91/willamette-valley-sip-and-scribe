@@ -1,5 +1,5 @@
 .review-container {
-    border: 1px solid #ccc; /* Border style */
+    border: 3px solid #000000; /* Border style */
     padding: 15px; /* Add padding around each review */
     margin-bottom: 20px; /* Add spacing between reviews */
 }
@@ -8,6 +8,6 @@
     color: tomato;
 }
 
-.review-body {
+/* .review-body {
     background-color: lightgray;
-}
+} */

@@ -5,7 +5,6 @@ import * as atmospheresAPI from '../../utilities/atmospheres-api';
 import * as additionalAmenitiesAPI from '../../utilities/additionalAmenities-api';
 import * as visitingPoliciesAPI from '../../utilities/visitingPolicies-api';
 import WineryCard from "../../components/WineryCard/WineryCard";
-import './WineryListPage.css';
 
 
 export default function WineryListPage({ wineries, setWineries, atmospheres, setAtmospheres, 
@@ -40,7 +39,7 @@ export default function WineryListPage({ wineries, setWineries, atmospheres, set
 
     return (
         <div>
-            <h1 className="page-title">Explore the Willamette Valley Region</h1>
+            <h2 style={{textAlign: 'center'}}>Explore the Willamette Valley Region</h2>
             <br></br>
             <Container>
                 <Row xs={1} md={2} lg={3} className="g-4">
