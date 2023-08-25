@@ -29,7 +29,7 @@ export default function SideBar({ user, setUser }) {
                     <h1><Link to="/">Willamette Valley Sip & Scribe</Link></h1>
                 </Nav>
                 &nbsp;
-                <Nav>
+                <Nav className="flex-column">
                     <Link to="/">About</Link>
                     <Link to="/wineries">Explore Wineries</Link>
                     <Link to="/myreviews" onClick={handleClick}>My Reviews</Link>
