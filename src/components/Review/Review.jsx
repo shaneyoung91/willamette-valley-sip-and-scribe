@@ -58,8 +58,8 @@ export default function Review({ user, reviews, setReviews, winery }) {
                     : (<div>
                             <p><b>Rating (out of 5):</b> ⭐️ {review.rating} / 5 ⭐️</p>
                             <p><b>Comments:</b> {review.comments}</p>
-                            {user && <p><b>Reviewed By:</b> {user.name} on {new Date(review.createdAt).toLocaleDateString()}</p>}
-                            {!user && <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>}
+                            {/* {user && <p><b>Reviewed By:</b> {user.name} on {new Date(review.createdAt).toLocaleDateString()}</p>} */}
+                            <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
                             {user && user._id === review.author._id && (
                                 <>
                                     <Button type="submit" onClick={() => setEditReviewId(review._id)}>EDIT</Button>
