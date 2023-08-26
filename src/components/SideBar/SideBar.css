@@ -2,13 +2,13 @@
     flex: 0 0 250px; /* Sidebar width */
     color: #060505;
     padding-top: 25px;
-    background-color: rgba(234, 159, 159, 0.952);
+    background-color: rgba(205, 205, 205, 0.952);
 }
 
 .sidebar a {
     color: #090707;
     text-decoration: none;
-    padding: 10px;
+    padding: px;
     display: block;
     transition: background-color 0.3s;
 }

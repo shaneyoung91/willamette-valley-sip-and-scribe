@@ -32,7 +32,9 @@ export default function SideBar({ user, setUser }) {
                         <Nav className="me-auto">
                             <br></br>
                             <Link to="/">About</Link>
+                            &nbsp; &nbsp; &nbsp;
                             <Link to="/wineries">Explore Wineries</Link>
+                            &nbsp; &nbsp; &nbsp;
                             {/* &nbsp; &nbsp;
                             &nbsp; &nbsp; */}
                             {/* <Link to="/myreviews" onClick={handleClick}>My Reviews</Link> */}

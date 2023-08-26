@@ -5,17 +5,19 @@ import NewReviewForm from '../../components/NewReviewForm/NewReviewForm';
 import UpdateReviewForm from '../UpdateReviewForm/UpdateReviewForm';
 import * as reviewsAPI from '../../utilities/reviews-api';
 
-export default function Review({ user, reviews, setReviews, winery }) {
+export default function Review({ user, winery }) {
     const [editReviewId, setEditReviewId] = useState(null);
+    const [reviews, setReviews] = useState([]);
 
     useEffect(function() {
         async function getReviews() {
             const reviews = await reviewsAPI.getAll();
             const wineryReviews = reviews.filter(review => review.winery === winery._id);
             setReviews(wineryReviews);
-        } 
+        }
         getReviews();
     }, [winery._id, setReviews]);
+
 
     async function handleAddReview(reviewData) {
         const review = await reviewsAPI.add(reviewData);
@@ -74,7 +76,7 @@ export default function Review({ user, reviews, setReviews, winery }) {
                     <br></br>
                     </div>
             ))}
-            {user ? <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} reviews={reviews} setReviews={setReviews} />
+            {user ? <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} />
             : 
             <div className='non-user-message'>
                 <b>PLEASE LOGIN / SIGN UP TO ADD A REVIEW</b>

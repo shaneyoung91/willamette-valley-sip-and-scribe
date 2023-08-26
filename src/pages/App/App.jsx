@@ -16,8 +16,7 @@ export default function App() {
   const [atmospheres, setAtmospheres] = useState([]);
   const [additionalAmenities, setAdditionalAmenities] = useState([]);
   const [visitingPolicies, setVisitingPolicies] = useState([]);
-  const [reviews, setReviews] = useState([]);
-
+  
   return (
     <div>
       <WineryProvider>
@@ -35,7 +34,7 @@ export default function App() {
                   setWineries={setWineries} atmospheres={atmospheres} setAtmospheres={setAtmospheres}
                   additionalAmenities={additionalAmenities} setAdditionalAmenities={setAdditionalAmenities}
                   visitingPolicies={visitingPolicies} setVisitingPolicies={setVisitingPolicies} 
-                  reviews={reviews} setReviews={setReviews} user={user}/>} />
+                  user={user}/>} />
                 <Route path="/auth" element={<AuthPage setUser={setUser} />} />
                 <Route path="/" element={<WelcomePage />} />
             </Routes>
