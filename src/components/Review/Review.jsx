@@ -13,6 +13,7 @@ export default function Review({ user, winery }) {
         async function getReviews() {
             const reviews = await reviewsAPI.getAll();
             const wineryReviews = reviews.filter(review => review.winery === winery._id);
+            console.log(wineryReviews)
             setReviews(wineryReviews);
         }
         getReviews();
@@ -21,7 +22,9 @@ export default function Review({ user, winery }) {
 
     async function handleAddReview(reviewData) {
         const review = await reviewsAPI.add(reviewData);
+        console.log(review)
         setReviews([...reviews, review]);
+        console.log(...reviews, review)
     };
 
     async function handleDelete(reviewId) {

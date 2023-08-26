@@ -41,10 +41,14 @@ async function deleteReview(req, res) {
 
 async function create(req, res) {
     req.body.user = req.user._id;
-
+    
     try {
         const review = await Review.create(req.body);
-        res.status(201).json(review);
+        await review.save();
+
+        const populatedReview = await review.populate('author', 'name');
+        console.log(populatedReview)
+        res.status(201).json(populatedReview);
     } catch (error) {
         console.log('Error creating review:', error);
     }
