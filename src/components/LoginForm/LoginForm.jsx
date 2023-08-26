@@ -1,4 +1,4 @@
-import { Button, Form, FloatingLabel } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
@@ -46,7 +46,7 @@ export default function LoginForm({ setUser }) {
                             placeholder="Enter email" 
                             value={credentials.email} 
                             onChange={handleChange} 
-                            style={{width: '40%'}}
+                            style={{width: '50%'}}
                             required 
                         />
                     </Form.Group>
@@ -58,7 +58,7 @@ export default function LoginForm({ setUser }) {
                             placeholder="Password" 
                             value={credentials.password} 
                             onChange={handleChange}
-                            style={{width: '40%'}}
+                            style={{width: '50%'}}
                             required 
                         />
                     <br></br>

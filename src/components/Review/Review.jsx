@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import './Review.css';
 import NewReviewForm from '../../components/NewReviewForm/NewReviewForm';
@@ -50,26 +50,29 @@ export default function Review({ user, reviews, setReviews, winery }) {
 
     return (
         <div className="review-body">
-            <h4><u>Reviews</u></h4>
-            <br></br>
+            <p className='review-title'><u>Reviews</u></p>
             {sortedReviews.map((review) => (
                 <div key={review._id} className='review-container'>
-                    {editReviewId === review._id ? (<UpdateReviewForm review={review} handleUpdate={handleUpdate}/>)
-                    : (<div>
-                            <p><b>Rating (out of 5):</b> ⭐️ {review.rating} / 5 ⭐️</p>
-                            <p><b>Comments:</b> {review.comments}</p>
-                            {/* {user && <p><b>Reviewed By:</b> {user.name} on {new Date(review.createdAt).toLocaleDateString()}</p>} */}
-                            <p><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</p>
-                            {user && user._id === review.author._id && (
-                                <>
-                                    <Button type="submit" onClick={() => setEditReviewId(review._id)}>EDIT</Button>
-                                    &nbsp; &nbsp;
-                                    <Button type="submit" onClick={() => handleDelete(review._id)}>DELETE</Button>
-                                </>
-                            )} 
-                        </div>
+                    {editReviewId === review._id ? (
+                        <UpdateReviewForm review={review} handleUpdate={handleUpdate}/>
+                    ) : (
+                        <Card>
+                            <Card.Body>
+                                <Card.Text><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</Card.Text>
+                                <Card.Text><b>Rating (out of 5):</b> ⭐️ {review.rating} / 5 ⭐️</Card.Text>
+                                <Card.Text><b>Comments:</b> {review.comments}</Card.Text>
+                                {user && user._id === review.author._id && (
+                                    <div>
+                                        <Button onClick={() => setEditReviewId(review._id)}>EDIT</Button>
+                                        &nbsp; &nbsp;
+                                        <Button onClick={() => handleDelete(review._id)}>DELETE</Button>
+                                    </div>
+                                )}
+                            </Card.Body>
+                        </Card>
                     )}
-                </div>
+                    <br></br>
+                    </div>
             ))}
             {user ? <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} reviews={reviews} setReviews={setReviews} />
             : 

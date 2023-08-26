@@ -1,4 +1,4 @@
-import { Button, Form, FloatingLabel } from "react-bootstrap";
+import { Button, Form, Card } from "react-bootstrap";
 
 export default function NewReviewForm({ user, handleAddReview, winery }) {
 
@@ -20,34 +20,34 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
     }
 
     return (
-        <div>
-            <h4><u>Add a Review</u></h4>
+        <Card>
+            <Card.Header as="h5">ADD A REVIEW</Card.Header>
+            <Card.Body>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Label>Rating (out of 5): </Form.Label>
-                    &nbsp; &nbsp;
-                    <input
+                    <Form.Label>Rating (out of 5)</Form.Label>
+                    <Form.Control
                         type="number"
                         id="rating"
                         name="rating"
                         min={1}
                         max={5}
+                        style={{width: '25%'}}
                         required
                     />
                     <br></br>
-                    <FloatingLabel label="Leave a comment here">
+                    <Form.Label>Comments</Form.Label>
                         <Form.Control
                             as="textarea"
                             id="comments"
                             name="comments"
                             placeholder="Leave a comment here"
-                            style={{width: '50%', height: '100px'}}
+                            style={{width: '65%'}}
                             required
                         />
-                    </FloatingLabel>
                     <br></br>
-                    <Button type="submit" variant='danger'>ADD REVIEW</Button>
+                    <Button type="submit">ADD REVIEW</Button>
                 </Form>
-            <br></br>
-        </div>
-    )
+            </Card.Body>
+        </Card>
+    );
 }
