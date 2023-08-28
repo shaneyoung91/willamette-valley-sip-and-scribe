@@ -54,37 +54,47 @@ export default function Review({ user, winery }) {
     });
 
     return (
-        <div className="review-body">
-            <p className='review-title'><u>Reviews</u></p>
-            {sortedReviews.map((review) => (
-                <div key={review._id} className='review-container'>
-                    {editReviewId === review._id ? (
-                        <UpdateReviewForm review={review} handleUpdate={handleUpdate}/>
-                    ) : (
-                        <Card>
-                            <Card.Body>
-                                <Card.Text><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</Card.Text>
-                                <Card.Text><b>Rating (out of 5):</b> ⭐️ {review.rating} / 5 ⭐️</Card.Text>
-                                <Card.Text><b>Comments:</b> {review.comments}</Card.Text>
-                                {user && user._id === review.author._id && (
-                                    <div>
-                                        <Button onClick={() => setEditReviewId(review._id)}>EDIT</Button>
-                                        &nbsp; &nbsp;
-                                        <Button onClick={() => handleDelete(review._id)}>DELETE</Button>
-                                    </div>
-                                )}
-                            </Card.Body>
-                        </Card>
-                    )}
-                    <br></br>
-                    </div>
-            ))}
-            {user ? <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} />
-            : 
-            <div className='non-user-message'>
-                <b>PLEASE LOGIN / SIGN UP TO ADD A REVIEW</b>
+        <>
+            <div className="review-body">
+                <Card>
+                    <Card.Header className='review-title'><u>Reviews</u></Card.Header>
+                </Card>
+                {sortedReviews.length === 0 ? (
+                    <Card>
+                        <Card.Body>No Reviews Yet 🙁</Card.Body>
+                    </Card>
+                ) : (
+                    sortedReviews.map((review) => (
+                        <div key={review._id} className='review-container'>
+                            {editReviewId === review._id ? (
+                                <UpdateReviewForm review={review} handleUpdate={handleUpdate}/>
+                            ) : (
+                                <Card>
+                                    <Card.Body>
+                                        <Card.Text><b>Reviewed By:</b> {review.author.name} on {new Date(review.createdAt).toLocaleDateString()}</Card.Text>
+                                        <Card.Text><b>Rating:</b> ⭐️ {review.rating} / 5 ⭐️</Card.Text>
+                                        <Card.Text><b>Comments:</b> {review.comments}</Card.Text>
+                                        {user && user._id === review.author._id && (
+                                            <div>
+                                                <Button onClick={() => setEditReviewId(review._id)}>EDIT</Button>
+                                                &nbsp; &nbsp;
+                                                <Button onClick={() => handleDelete(review._id)}>DELETE</Button>
+                                            </div>
+                                        )}
+                                    </Card.Body>
+                                </Card>
+                            )}
+                        </div>
+                    ))
+                )}
+                <br />
+                {user ? <NewReviewForm user={user} handleAddReview={handleAddReview} winery={winery} />
+                : 
+                <div className='non-user-message'>
+                    <b>PLEASE LOGIN / SIGN UP TO ADD A REVIEW</b>
+                </div>
+                }
             </div>
-            }
-        </div>
+        </>
     )
 }

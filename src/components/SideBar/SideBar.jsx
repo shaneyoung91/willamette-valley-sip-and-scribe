@@ -26,11 +26,11 @@ export default function SideBar({ user, setUser }) {
         <>
             <Navbar collapseOnSelect expand="lg" className="sidebar">
                 <Container>
-                    <Navbar.Brand><h2>Willamette Valley Sip & Scribe</h2></Navbar.Brand>
+                    <Navbar.Brand><h2>Willamette Valley Sip & Scribe |</h2></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <br></br>
+                            <br />
                             <Link to="/">About</Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link to="/wineries">Explore Wineries</Link>
@@ -44,11 +44,11 @@ export default function SideBar({ user, setUser }) {
                                 (<Link to="/auth">Login / Sign Up</Link>)        
                             }
                         </Nav>
-                        <br></br>
+                        <br />
                         <Nav>
                             {user && (
                                 <Navbar>
-                                    <h6>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h6>
+                                    <h4>Signed in as: {user.name.charAt(0).toUpperCase()+user.name.slice(1)}</h4>
                                 </Navbar>
                             )}
                         </Nav>

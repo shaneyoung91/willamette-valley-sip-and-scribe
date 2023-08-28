@@ -20,34 +20,36 @@ export default function NewReviewForm({ user, handleAddReview, winery }) {
     }
 
     return (
-        <Card>
-            <Card.Header as="h5">ADD A REVIEW</Card.Header>
-            <Card.Body>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Label>Rating (out of 5)</Form.Label>
-                    <Form.Control
-                        type="number"
-                        id="rating"
-                        name="rating"
-                        min={1}
-                        max={5}
-                        style={{width: '25%'}}
-                        required
-                    />
-                    <br></br>
-                    <Form.Label>Comments</Form.Label>
+        <>
+            <Card>
+                <Card.Header className="review-title"><u>Write A Review</u></Card.Header>
+                <Card.Body>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Label>Rating (out of 5)</Form.Label>
                         <Form.Control
-                            as="textarea"
-                            id="comments"
-                            name="comments"
-                            placeholder="Leave a comment here"
-                            style={{width: '65%'}}
+                            type="number"
+                            id="rating"
+                            name="rating"
+                            min={1}
+                            max={5}
+                            style={{width: '25%'}}
                             required
                         />
-                    <br></br>
-                    <Button type="submit">ADD REVIEW</Button>
-                </Form>
-            </Card.Body>
-        </Card>
+                        <br />
+                        <Form.Label>Comments</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                id="comments"
+                                name="comments"
+                                placeholder="Leave a comment here"
+                                style={{width: '65%'}}
+                                required
+                            />
+                        <br />
+                        <Button type="submit">ADD REVIEW</Button>
+                    </Form>
+                </Card.Body>
+            </Card>
+        </>
     );
 }

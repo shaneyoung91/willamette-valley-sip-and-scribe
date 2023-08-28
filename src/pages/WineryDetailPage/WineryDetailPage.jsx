@@ -35,7 +35,7 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
 
 
     return (
-        <div>
+        <>
             <div>
                 <Carousel data-bs-theme="dark" fade>
                     {winery.images.map((image, index) => (
@@ -47,7 +47,7 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
                     ))}
                 </Carousel>
             </div>
-            <br></br>
+            <br />
             <div className='winery-detail-body'>
                 <Card>
                     <Card.Header as="h3" className='text-center'>{winery.name}</Card.Header>
@@ -97,10 +97,10 @@ export default function WineryDetailPage({ user, reviews, setReviews }) {
                     <li><b>Visiting Policies:</b> {visitingPolicyName.join(', ')}</li> */}
                 </Accordion>
                 </div>
-            <br></br>
+            <br />
             <div className='grid-container'>
                 <Review user={user} reviews={reviews} setReviews={setReviews} winery={winery}/>
             </div>
-        </div>
+        </>
     );
 }

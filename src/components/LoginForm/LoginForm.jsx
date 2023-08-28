@@ -35,7 +35,7 @@ export default function LoginForm({ setUser }) {
     return (
         <>
             <h2>Login</h2>
-            <br></br>
+            <br />
             <div>
                 <Form autoComplete='off' onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail" >
@@ -61,12 +61,12 @@ export default function LoginForm({ setUser }) {
                             style={{width: '50%'}}
                             required 
                         />
-                    <br></br>
+                    <br />
                     <Button type="submit">SUBMIT</Button>
                 </Form.Group>   
                 </Form>         
             </div>
-            <br></br>
+            <br />
             <p className="error-message">&nbsp;{error}</p>
         </>
         );

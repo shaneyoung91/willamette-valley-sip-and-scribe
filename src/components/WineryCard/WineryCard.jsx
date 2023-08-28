@@ -17,7 +17,7 @@ export default function WineryCard({ winery, wineries, index, atmospheres, addit
                 <Card className={`card-container ${expanded ? 'card-expanded' : ''}`}>
                     <Card.Img variant="top" src={winery.images[0]} className="card-image" />
                     <Card.Body>
-                        <Card.Title>{winery.name}</Card.Title>
+                        <Card.Title><b>{winery.name}</b></Card.Title>
                         <Card.Text>{expanded ? winery.overview : winery.overview.slice(0, 120) + '...'}</Card.Text>
                         <Button variant="primary" onClick={toggleExpanded}>
                             {expanded ? 'Collapse' : 'Expand'}

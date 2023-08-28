@@ -10,6 +10,7 @@ export default function SignUpForm({ setUser }) {
         'password': '',
         'confirmPW': '',
     })
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -35,9 +36,9 @@ export default function SignUpForm({ setUser }) {
     const disable = formData.password !== formData.confirmPW;
 
     return (
-        <div>
+        <>
             <h2>Sign Up</h2>
-            <br></br>
+            <br />
             <Form autoComplete='off' onSubmit={handleSignUp}>
                 <Form.Group className="mb-3">
                     <Form.Label>Name</Form.Label>
@@ -51,7 +52,6 @@ export default function SignUpForm({ setUser }) {
                             required
                         />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId='formBasicPassword'> 
                     <Form.Label>Email Address</Form.Label>
                         <Form.Control
@@ -79,9 +79,7 @@ export default function SignUpForm({ setUser }) {
                             Password must be at least 3 characters long.
                         </Form.Text>
                 </Form.Group>
-
                 &nbsp; &nbsp;
-                
                 <Form.Group>
                     <Form.Label controlId="floatingInput" label='Confirm Password'>Confirm Password</Form.Label>
                         <Form.Control
@@ -94,11 +92,12 @@ export default function SignUpForm({ setUser }) {
                             required
                             />
                 </Form.Group>
-                <br></br>
+                <br />
                 <Button type="submit" disabled={disable}>SIGN UP</Button>
             </Form>
-            <br></br>
-            <br></br>
-        </div>
+            <br />
+            <br />
+            <p className="error-message">&nbsp;{error}</p>
+        </>
     )
 }

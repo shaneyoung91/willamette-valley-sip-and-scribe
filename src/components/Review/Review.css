@@ -1,7 +1,12 @@
-
+.review-container {
+    font-size: 16px;
+    border-radius: 25px;
+    margin: 1.50px;
+}
 
 .review-title {
-    font-size: 35px;
+    font-size: 22px;
+    
 }
 
 .non-user-message {

@@ -18,7 +18,7 @@ export default function App() {
   const [visitingPolicies, setVisitingPolicies] = useState([]);
   
   return (
-    <div>
+    <>
       <WineryProvider>
       <div className="App">
         <SideBar user={user} setUser={setUser} />
@@ -41,6 +41,6 @@ export default function App() {
           </div>
       </div>
       </WineryProvider>
-    </div>
+    </>
   );
 }

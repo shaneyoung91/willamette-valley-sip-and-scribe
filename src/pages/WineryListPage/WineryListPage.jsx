@@ -38,24 +38,26 @@ export default function WineryListPage({ wineries, setWineries, atmospheres, set
     }, []);
 
     return (
-        <div>
-            <h2 style={{textAlign: 'center'}}>Explore the Willamette Valley Region</h2>
-            <br></br>
-            <Container>
-                <Row xs={1} md={2} lg={3} className="g-4">
-                    {wineries.map((winery, index) => (
-                        <WineryCard
-                            winery={winery} 
-                            key={winery._id}
-                            index={index}
-                            atmospheres={atmospheres}
-                            additionalAmenities={additionalAmenities}
-                            visitingPolicies={visitingPolicies}
-                            wineries={wineries}
-                        />
-                    ))}
-                </Row>
-            </Container>
-        </div>
+        <>
+            <div>
+                <h2 style={{textAlign: 'center'}}>Explore the Willamette Valley Region</h2>
+                <br />
+                <Container>
+                    <Row xs={1} md={2} lg={3} className="g-4">
+                        {wineries.map((winery, index) => (
+                            <WineryCard
+                                winery={winery} 
+                                key={winery._id}
+                                index={index}
+                                atmospheres={atmospheres}
+                                additionalAmenities={additionalAmenities}
+                                visitingPolicies={visitingPolicies}
+                                wineries={wineries}
+                            />
+                        ))}
+                    </Row>
+                </Container>
+            </div>
+        </>
     )
 }
