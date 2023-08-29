@@ -6,11 +6,6 @@ Sip on the valley's finest Pinot Noirs, Chardonnays, Rosés, and more, while our
 
 ---
 
-## Link to Wireframe :link:
-[Wireframe (via Whimsical)](https://whimsical.com/wireframe-willamette-valley-sip-and-scribe-BgFQGierb2tDTCXQFYqaji)
-
----
-
 ## Link to App :link:
 [Willamette Valley Sip & Scribe](https://w-v-sip-and-scribe-a962479193e6.herokuapp.com/)
 
