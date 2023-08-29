@@ -7,7 +7,7 @@ Sip on the valley's finest Pinot Noirs, Chardonnays, Rosés, and more, while our
 ---
 
 ## Link to Wireframe :link:
-[Wireframe for App](https://whimsical.com/wireframe-willamette-valley-sip-and-scribe-BgFQGierb2tDTCXQFYqaji)
+[Wireframe (via Whimsical)](https://whimsical.com/wireframe-willamette-valley-sip-and-scribe-BgFQGierb2tDTCXQFYqaji)
 
 ---
 
