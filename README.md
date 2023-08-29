@@ -6,6 +6,11 @@ Sip on the valley's finest Pinot Noirs, Chardonnays, Rosés, and more, while our
 
 ---
 
+## Link to Wireframe :link:
+[Wireframe for App](https://whimsical.com/wireframe-willamette-valley-sip-and-scribe-BgFQGierb2tDTCXQFYqaji)
+
+---
+
 ## Link to App :link:
 [Willamette Valley Sip & Scribe](https://w-v-sip-and-scribe-a962479193e6.herokuapp.com/)
 
@@ -75,3 +80,4 @@ Sip on the valley's finest Pinot Noirs, Chardonnays, Rosés, and more, while our
    - [ ] Search functionality (with filters) for specific amenities/atmospheres/visiting policies
    - [ ] Refer to Trello for all other enhancements: [Trello](https://trello.com/b/B6NVamFs/oregon-wine-app-mern-stack)
 ---
+
